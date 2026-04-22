@@ -81,6 +81,7 @@
                             <path fill-rule="evenodd"
                                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                 clip-rule="evenodd"></path>
+                        </svg>
                         GitHub Profile
                     </a>
                     <a href="https://t.me/darknesslake" target="_blank"
@@ -165,7 +166,7 @@
         <!-- Projects Section -->
         <section id="projects" class="max-w-5xl mx-auto px-6 py-16">
             <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-blue-500"></span> Featured Projects
+                <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="projects_title">Featured Projects</span>
             </h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -183,9 +184,9 @@
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition">CleanLiving
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p1_title">CleanLiving
                         AI App</h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p1_desc">
                         MVP habit-tracker app built with Vibe Coding. Personalized workout generation via Claude API
                         and real-time exercise technique analysis.
                     </p>
@@ -219,9 +220,9 @@
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition">AI Content Agent
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p2_title">AI Content Agent
                     </h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p2_desc">
                         Automated IT news aggregation and rewriting system for a Telegram channel.
                         Full pipeline: parsing → LLM processing → publishing. Self-hosted via n8n.
                     </p>
@@ -254,9 +255,9 @@
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition">VSaaS Platform
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p3_title">VSaaS Platform
                     </h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p3_desc">
                         Hybrid architecture design for B2B video analytics. Video surveillance system with computer vision,
                         violation detection, and Telegram notifications.
                     </p>
@@ -288,9 +289,9 @@
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition">Avtobys Clone
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p4_title">Avtobys Clone
                     </h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow">
+                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p4_desc">
                         Functional clone of a popular transit application. Complex mobile navigation,
                         adaptive UI/UX architecture, and interactive components.
                     </p>
@@ -310,13 +311,13 @@
         <!-- Skills Section -->
         <section id="skills" class="max-w-5xl mx-auto px-6 py-16">
             <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-blue-500"></span> Tech Stack & Tools
+                <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="skills_title">Tech Stack & Tools</span>
             </h3>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- AI & Automation (Vibe Coding) -->
                 <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700">🤖 AI & Automation</h4>
+                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_ai">🤖 AI & Automation</h4>
                     <ul class="space-y-3 text-slate-400 text-sm">
                         <li class="flex items-center gap-2"><span
                                 class="w-1.5 h-1.5 rounded-full bg-violet-400"></span> Antigravity</li>
