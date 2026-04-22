@@ -22,6 +22,20 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .lang-btn { padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .2s; border: 1px solid transparent; background: transparent; color: #94a3b8; }
+        .lang-btn.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+        .lang-btn:not(.active):hover { color: #e2e8f0; border-color: #475569; }
+
+        .glow-card { position: relative; }
+        .glow-card::before { content: ''; position: absolute; inset: -1px; border-radius: 1rem; background: linear-gradient(135deg, #6E44FF 0%, #EA4B71 50%, #3b82f6 100%); z-index: -1; opacity: .5; filter: blur(2px); transition: opacity .3s; }
+        .glow-card:hover::before { opacity: .8; }
+
+        .pipeline-flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; }
+        .pipeline-step { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(30,41,59,.8); border: 1px solid #334155; border-radius: 10px; font-size: 13px; color: #cbd5e1; white-space: nowrap; transition: all .3s; }
+        .pipeline-step:hover { border-color: #6E44FF; background: rgba(110,68,255,.1); transform: translateY(-2px); }
+        .pipeline-arrow { color: #6E44FF; font-size: 20px; margin: 0 4px; animation: arrowPulse 1.5s ease-in-out infinite; }
+        @keyframes arrowPulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
     </style>
 </head>
 
@@ -31,10 +45,15 @@
     <nav class="fixed w-full z-50 top-0 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="font-bold text-xl tracking-tight text-slate-100 hover:text-blue-400 transition">DP.</a>
-            <div class="flex gap-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#projects" class="hover:text-white transition">Projects</a>
-                <a href="#skills" class="hover:text-white transition">Skills</a>
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-white transition" data-i18n="nav_about">About</a>
+                <a href="#ai-integration" class="hover:text-white transition" data-i18n="nav_ai">AI Integration</a>
+                <a href="#projects" class="hover:text-white transition" data-i18n="nav_projects">Projects</a>
+                <a href="#skills" class="hover:text-white transition" data-i18n="nav_skills">Skills</a>
+                <div class="flex gap-1 ml-2 border-l border-slate-700 pl-4">
+                    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+                    <button class="lang-btn" onclick="setLang('ru')" id="btn-ru">RU</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -43,14 +62,14 @@
     <main class="flex-grow pt-24 pb-12">
         <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
             <div class="max-w-3xl">
-                <p class="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm">Hi there, I am</p>
+                <p class="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm" data-i18n="hero_greeting">Hi there, I am</p>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 text-slate-100 tracking-tight">
                     darknesslake
                 </h1>
                 <h2 class="text-3xl md:text-5xl font-bold mb-8 text-slate-400">
-                    <span class="gradient-text">AI Automation Engineer</span> <br> & Mobile Developer.
+                    <span class="gradient-text" data-i18n="hero_role1">AI Automation Engineer</span> <br> <span data-i18n="hero_role2">& Mobile Developer.</span>
                 </h2>
-                <p class="text-lg text-slate-400 mb-10 leading-relaxed max-w-2xl">
+                <p class="text-lg text-slate-400 mb-10 leading-relaxed max-w-2xl" data-i18n="hero_desc">
                     I specialize in building intelligent cross-platform applications and automating complex business
                     workflows. Focused on integrating Large Language Models (LLMs) and Computer Vision into mobile
                     environments.
@@ -62,7 +81,6 @@
                             <path fill-rule="evenodd"
                                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                 clip-rule="evenodd"></path>
-                        </svg>
                         GitHub Profile
                     </a>
                     <a href="https://t.me/darknesslake" target="_blank"
@@ -80,16 +98,67 @@
         <!-- About Section -->
         <section id="about" class="max-w-5xl mx-auto px-6 py-16">
             <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-blue-500"></span> About My Journey
+                <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="about_title">About My Journey</span>
             </h3>
             <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700/50">
-                <p class="text-slate-300 leading-relaxed">
+                <p class="text-slate-300 leading-relaxed" data-i18n="about_text">
                     My background includes managing critical infrastructure in the aviation industry, which taught me to
                     write fault-tolerant code, maintain strict quality control, and deeply care about system
                     architecture. I transitioned into IT to build products that solve real-world problems. Today, I
                     combine my rigorous operational experience with modern technologies like React Native, TypeScript,
                     and AI APIs to create scalable, intelligent software solutions.
                 </p>
+            </div>
+        </section>
+
+        <!-- AI Integration Section -->
+        <section id="ai-integration" class="max-w-5xl mx-auto px-6 py-16">
+            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
+                <span class="w-8 h-px bg-violet-500"></span> <span data-i18n="ai_title">AI Integration & Automation</span>
+            </h3>
+
+            <div class="glow-card bg-slate-800/60 rounded-2xl p-8 border border-slate-700/50 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-3xl">⚡</span>
+                    <h4 class="text-xl font-bold text-slate-100" data-i18n="ai_headline">End-to-End AI Pipelines with n8n</h4>
+                </div>
+                <p class="text-slate-400 mb-6 leading-relaxed" data-i18n="ai_desc">
+                    I design and deploy self-hosted AI automation workflows that connect LLMs, APIs, and messaging platforms
+                    into production-ready pipelines. From data ingestion to content generation and publishing — fully automated,
+                    running 24/7 on my own infrastructure.
+                </p>
+
+                <!-- Visual Pipeline -->
+                <div class="pipeline-flow mb-8">
+                    <div class="pipeline-step">📡 <span data-i18n="pipe_1">Data Sources</span></div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step">⚙️ n8n</div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step">🧠 Claude API</div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step">✍️ <span data-i18n="pipe_4">Content Gen</span></div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step">📲 Telegram</div>
+                </div>
+
+                <!-- Capabilities Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
+                        <div class="text-2xl mb-2">🔗</div>
+                        <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap1_title">Workflow Orchestration</h5>
+                        <p class="text-slate-500 text-sm" data-i18n="cap1_desc">Multi-step n8n workflows with conditional logic, error handling, and scheduled triggers.</p>
+                    </div>
+                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
+                        <div class="text-2xl mb-2">🤖</div>
+                        <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap2_title">LLM Integration</h5>
+                        <p class="text-slate-500 text-sm" data-i18n="cap2_desc">Claude API for content rewriting, summarization, and intelligent data processing.</p>
+                    </div>
+                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
+                        <div class="text-2xl mb-2">🛡️</div>
+                        <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap3_title">Self-Hosted Infra</h5>
+                        <p class="text-slate-500 text-sm" data-i18n="cap3_desc">Docker + Nginx Proxy Manager + SSL. Full control, no vendor lock-in.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
