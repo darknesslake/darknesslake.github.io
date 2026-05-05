@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denis | Portfolio</title>
+    <title>darknesslake | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -12,9 +12,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
-            /* slate-900 */
             color: #f8fafc;
-            /* slate-50 */
         }
 
         .gradient-text {
@@ -102,15 +100,8 @@
         }
 
         @keyframes arrowPulse {
-
-            0%,
-            100% {
-                opacity: .4;
-            }
-
-            50% {
-                opacity: 1;
-            }
+            0%, 100% { opacity: .4; }
+            50% { opacity: 1; }
         }
     </style>
 </head>
@@ -121,10 +112,11 @@
     <nav class="fixed w-full z-50 top-0 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="font-bold text-xl tracking-tight text-slate-100 hover:text-blue-400 transition relative z-50">DP.</a>
-            
+
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
                 <a href="#about" class="hover:text-white transition" data-i18n="nav_about">About</a>
+                <a href="#experience" class="hover:text-white transition" data-i18n="nav_experience">Experience</a>
                 <a href="#ai-integration" class="hover:text-white transition" data-i18n="nav_ai">AI Integration</a>
                 <a href="#projects" class="hover:text-white transition" data-i18n="nav_projects">Projects</a>
                 <a href="#skills" class="hover:text-white transition" data-i18n="nav_skills">Skills</a>
@@ -152,6 +144,7 @@
                 <!-- Mobile Dropdown Menu -->
                 <div id="mobile-menu" class="absolute top-12 right-0 w-56 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl hidden flex-col py-2 z-50 opacity-0 transition-opacity duration-200">
                     <a href="#about" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_about">About</a>
+                    <a href="#experience" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_experience">Experience</a>
                     <a href="#ai-integration" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_ai">AI Integration</a>
                     <a href="#projects" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_projects">Projects</a>
                     <a href="#skills" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_skills">Skills</a>
@@ -164,19 +157,14 @@
     <main class="flex-grow pt-24 pb-12">
         <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
             <div class="max-w-3xl">
-                <p class="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm" data-i18n="hero_greeting">Hi
-                    there, I am</p>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-slate-100 tracking-tight">
-                    darknesslake
-                </h1>
+                <p class="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm" data-i18n="hero_greeting">Hi there, I am</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-slate-100 tracking-tight">darknesslake</h1>
                 <h2 class="text-3xl md:text-5xl font-bold mb-8 text-slate-400">
-                    <span class="gradient-text" data-i18n="hero_role1">AI Automation Engineer</span> <br> <span
-                        data-i18n="hero_role2">& Mobile Developer.</span>
+                    <span class="gradient-text" data-i18n="hero_role1">AI Developer · n8n Integrator</span> <br>
+                    <span data-i18n="hero_role2">& Full-Stack.</span>
                 </h2>
                 <p class="text-lg text-slate-400 mb-10 leading-relaxed max-w-2xl" data-i18n="hero_desc">
-                    I specialize in building intelligent cross-platform applications and automating complex business
-                    workflows. Focused on integrating Large Language Models (LLMs) and Computer Vision into mobile
-                    environments.
+                    I build products that reduce business costs through AI: from computer vision and autonomous agents to frontend and server infrastructure. I cover the full cycle — design, development, deployment.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="https://github.com/darknesslake" target="_blank"
@@ -216,6 +204,56 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
+        <section id="experience" class="max-w-5xl mx-auto px-6 py-16">
+            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
+                <span class="w-8 h-px bg-emerald-500"></span> <span data-i18n="exp_title">Work Experience</span>
+            </h3>
+            <div class="space-y-4">
+                <!-- Position 1 -->
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-100" data-i18n="exp1_role">Project Manager & Developer</h4>
+                            <p class="text-emerald-400 font-medium text-sm">SEEKERIS</p>
+                        </div>
+                        <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp1_period">Jan 2026 — Present</span>
+                    </div>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b1">Designed AI video analytics system architecture</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b2">Deployed bilingual website with SEO and n8n integration</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b3">Configured Docker, Nginx, VPS infrastructure</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b4">Implemented LLM integrations and automated pipelines</span></li>
+                    </ul>
+                </div>
+
+                <!-- Position 2 -->
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-violet-500/30 transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-100" data-i18n="exp2_role">AI Integration Engineer</h4>
+                            <p class="text-violet-400 font-medium text-sm" data-i18n="exp2_company">Personal Practice</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400 mt-1.5 shrink-0"></span><span data-i18n="exp2_b1">End-to-end AI pipelines in n8n</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400 mt-1.5 shrink-0"></span><span data-i18n="exp2_b2">Self-hosted infrastructure</span></li>
+                    </ul>
+                </div>
+
+                <!-- Position 3 -->
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/30 transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-100" data-i18n="exp3_role">Fuel Supply Engineer</h4>
+                            <p class="text-orange-400 font-medium text-sm" data-i18n="exp3_company">Airport "ORAL"</p>
+                        </div>
+                        <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp3_period">Sep 2022 — Mar 2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- AI Integration Section -->
         <section id="ai-integration" class="max-w-5xl mx-auto px-6 py-16">
             <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
@@ -231,10 +269,8 @@
                 </div>
                 <p class="text-slate-400 mb-6 leading-relaxed" data-i18n="ai_desc">
                     I design and deploy self-hosted AI automation workflows that connect LLMs, APIs, and messaging
-                    platforms
-                    into production-ready pipelines. From data ingestion to content generation and publishing — fully
-                    automated,
-                    running 24/7 on my own infrastructure.
+                    platforms into production-ready pipelines. From data ingestion to content generation and publishing —
+                    fully automated, running 24/7 on my own infrastructure.
                 </p>
 
                 <!-- Visual Pipeline -->
@@ -252,22 +288,19 @@
 
                 <!-- Capabilities Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div
-                        class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
+                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
                         <div class="text-2xl mb-2">🔗</div>
                         <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap1_title">Workflow Orchestration</h5>
                         <p class="text-slate-500 text-sm" data-i18n="cap1_desc">Multi-step n8n workflows with
                             conditional logic, error handling, and scheduled triggers.</p>
                     </div>
-                    <div
-                        class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
+                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
                         <div class="text-2xl mb-2">🤖</div>
                         <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap2_title">LLM Integration</h5>
                         <p class="text-slate-500 text-sm" data-i18n="cap2_desc">Claude API for content rewriting,
                             summarization, and intelligent data processing.</p>
                     </div>
-                    <div
-                        class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
+                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
                         <div class="text-2xl mb-2">🛡️</div>
                         <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap3_title">Self-Hosted Infra</h5>
                         <p class="text-slate-500 text-sm" data-i18n="cap3_desc">Docker + Nginx Proxy Manager + SSL. Full
@@ -283,148 +316,109 @@
                 <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="projects_title">Featured Projects</span>
             </h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Project 1 -->
-                <div
-                    class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project 1: AI SEEKERIS -->
+                <div class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
                     <div class="flex justify-between items-start mb-4">
                         <div class="text-4xl">📹</div>
                         <a href="https://aiseekeris.space/" target="_blank"
                             class="text-slate-400 hover:text-blue-400 transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition"
-                        data-i18n="p3_title">AI SEEKERIS
-                    </h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p3_desc">
-                        Hybrid architecture design for B2B video analytics. Video surveillance system with computer
-                        vision,
-                        violation detection, and Telegram notifications.
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p1_title">AI SEEKERIS</h4>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p1_desc">
+                        B2B video analytics · SaaS product. Detects events on video and sends alerts to Telegram in seconds.
                     </p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Python</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">OpenCV</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">PostgreSQL</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">Docker</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20">Telegram
-                            Bot API</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Python</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">OpenCV</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">PostgreSQL</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">Docker</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20">Telegram Bot API</span>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div
-                    class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
+                <!-- Project 2: AI Content Agent -->
+                <div class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
                     <div class="flex justify-between items-start mb-4">
                         <div class="text-4xl">🤖</div>
                         <a href="https://github.com/darknesslake" target="_blank"
                             class="text-slate-400 hover:text-blue-400 transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition"
-                        data-i18n="p2_title">AI Content Agent
-                    </h4>
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p2_title">AI Content Agent</h4>
                     <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p2_desc">
-                        Automated IT news aggregation and rewriting system for a Telegram channel.
-                        Full pipeline: parsing → LLM processing → publishing. Self-hosted via n8n.
+                        Telegram channel automation. Source parsing → LLM processing → publishing, running 24/7.
                     </p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">n8n</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">Docker</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">Claude
-                            API</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Python</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20">Telegram
-                            Bot API</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">n8n</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">Docker</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">Claude API</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Python</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20">Telegram Bot API</span>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div
-                    class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
+                <!-- Project 3: Clean Living -->
+                <div class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
                     <div class="flex justify-between items-start mb-4">
                         <div class="text-4xl">🏋️‍♂️</div>
                         <a href="https://github.com/darknesslake/cleanliving-app" target="_blank"
                             class="text-slate-400 hover:text-blue-400 transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
                         </a>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition"
-                        data-i18n="p1_title">CleanLiving
-                        AI App</h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p1_desc">
-                        MVP habit-tracker app built with Vibe Coding. Personalized workout generation via Claude API
-                        and real-time exercise technique analysis.
+                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p3_title">Clean Living</h4>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p3_desc">
+                        Mobile habit tracker. App for building habits with reminders and visual progress.
                     </p>
                     <div class="flex flex-wrap gap-2 mt-auto">
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">React
-                            Native</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">TypeScript</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-slate-600/30 text-slate-300 rounded-full border border-slate-600/50">Expo</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20">Firebase</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">Claude
-                            API</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">React Native</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">TypeScript</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-slate-600/30 text-slate-300 rounded-full border border-slate-600/50">Expo</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20">Firebase</span>
+                        <span class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">Claude API</span>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Project 4 -->
-                <div
-                    class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-4xl">🚌</div>
-                        <a href="https://github.com/darknesslake/avtobys-clone" target="_blank"
-                            class="text-slate-400 hover:text-blue-400 transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition"
-                        data-i18n="p4_title">Avtobys Clone
-                    </h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p4_desc">
-                        Functional clone of a popular transit application. Complex mobile navigation,
-                        adaptive UI/UX architecture, and interactive components.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">React
-                            Native</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">TypeScript</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium bg-slate-600/30 text-slate-300 rounded-full border border-slate-600/50">Expo</span>
-                    </div>
+        <!-- Value Proposition Section -->
+        <section id="values" class="max-w-5xl mx-auto px-6 py-16">
+            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
+                <span class="w-8 h-px bg-amber-500"></span> <span data-i18n="val_title">Why Work With Me</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition">
+                    <div class="text-3xl mb-3">🔄</div>
+                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val1_title">Full Cycle</h4>
+                    <p class="text-slate-400 text-sm" data-i18n="val1_desc">Entire stack without outsourcing tasks</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-violet-500/30 transition">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val2_title">Automation</h4>
+                    <p class="text-slate-400 text-sm" data-i18n="val2_desc">Remove routine through AI</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val3_title">Reliable Infrastructure</h4>
+                    <p class="text-slate-400 text-sm" data-i18n="val3_desc">Environment for autonomous 24/7 operation</p>
+                </div>
+                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/30 transition">
+                    <div class="text-3xl mb-3">⚡</div>
+                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val4_title">Speed to Launch</h4>
+                    <p class="text-slate-400 text-sm" data-i18n="val4_desc">From idea to deployment fast</p>
                 </div>
             </div>
         </section>
@@ -435,64 +429,57 @@
                 <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="skills_title">Tech Stack & Tools</span>
             </h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- AI & Automation (Vibe Coding) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- AI & Automation -->
                 <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_ai">🤖
-                        AI & Automation</h4>
+                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_ai">🤖 AI & Automation</h4>
                     <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                            Antigravity</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                            Claude API</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                            n8n</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                            Docker</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                            Google Cloud</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Claude API</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Gemini</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Prompt Engineering</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>n8n</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>OpenCV</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>YOLO</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Edge AI</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Python</li>
                     </ul>
                 </div>
 
-                <!-- Development -->
+                <!-- Frontend -->
                 <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_dev">
-                        📱 Development</h4>
+                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_frontend">🖥 Frontend</h4>
                     <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                            React Native</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                            TypeScript</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                            Expo</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                            Firebase</li>
-                        <li class="flex items-center gap-2"><span
-                                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Python</li>
-                        <li class="flex items-center gap-2"><span
-                                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Node.js</li>
-                        <li class="flex items-center gap-2"><span
-                                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> PostgreSQL</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>HTML / CSS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Tailwind CSS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>JavaScript</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>React Native</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>TypeScript</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Expo</li>
                     </ul>
                 </div>
 
-                <!-- System Administration -->
+                <!-- Backend & Data -->
                 <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_sys">
-                        🖥 System Administration</h4>
+                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_backend">🗄 Backend & Data</h4>
                     <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                            Windows Server</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                            Ubuntu</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                            Nginx Proxy Manager</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                            Let's Encrypt (SSL)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                            Git</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
-                            TCP/IP Networking</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>PostgreSQL</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Firebase</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Telegram Bot API</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>REST / Webhook</li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure -->
+                <div>
+                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_infra">🏗 Infrastructure</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Docker</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Docker Compose</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Nginx</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Ubuntu VPS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>SSL / TLS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>SSH / rsync</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Git</li>
                     </ul>
                 </div>
             </div>
@@ -519,17 +506,32 @@
         const translations = {
             en: {
                 nav_about: "About",
+                nav_experience: "Experience",
                 nav_ai: "AI Integration",
                 nav_projects: "Projects",
                 nav_skills: "Skills",
                 hero_greeting: "Hi there, I am",
-                hero_role1: "AI Automation Engineer",
-                hero_role2: "& Mobile Developer.",
-                hero_desc: "I specialize in building intelligent cross-platform applications and automating complex business workflows. Focused on integrating Large Language Models (LLMs) and Computer Vision into mobile environments.",
+                hero_role1: "AI Developer · n8n Integrator",
+                hero_role2: "& Full-Stack.",
+                hero_desc: "I build products that reduce business costs through AI: from computer vision and autonomous agents to frontend and server infrastructure. I cover the full cycle — design, development, deployment.",
                 btn_github: "GitHub Profile",
                 btn_contact: "Contact Me",
                 about_title: "About My Journey",
                 about_text: "My background includes managing critical infrastructure in the aviation industry, which taught me to write fault-tolerant code, maintain strict quality control, and deeply care about system architecture. I transitioned into IT to build products that solve real-world problems. Today, I combine my rigorous operational experience with modern technologies like React Native, TypeScript, and AI APIs to create scalable, intelligent software solutions.",
+                exp_title: "Work Experience",
+                exp1_role: "Project Manager & Developer",
+                exp1_period: "Jan 2026 — Present",
+                exp1_b1: "Designed AI video analytics system architecture",
+                exp1_b2: "Deployed bilingual website with SEO and n8n integration",
+                exp1_b3: "Configured Docker, Nginx, VPS infrastructure",
+                exp1_b4: "Implemented LLM integrations and automated pipelines",
+                exp2_role: "AI Integration Engineer",
+                exp2_company: "Personal Practice",
+                exp2_b1: "End-to-end AI pipelines in n8n",
+                exp2_b2: "Self-hosted infrastructure",
+                exp3_role: "Fuel Supply Engineer",
+                exp3_company: 'Airport "ORAL"',
+                exp3_period: "Sep 2022 — Mar 2026",
                 ai_title: "AI Integration & Automation",
                 ai_headline: "End-to-End AI Pipelines with n8n",
                 ai_desc: "I design and deploy self-hosted AI automation workflows that connect LLMs, APIs, and messaging platforms into production-ready pipelines. From data ingestion to content generation and publishing — fully automated, running 24/7 on my own infrastructure.",
@@ -542,33 +544,56 @@
                 cap3_title: "Self-Hosted Infra",
                 cap3_desc: "Docker + Nginx Proxy Manager + SSL. Full control, no vendor lock-in.",
                 projects_title: "Featured Projects",
-                p1_title: "CleanLiving AI App",
-                p1_desc: "MVP habit-tracker app built with Vibe Coding. Personalized workout generation via Claude API and real-time exercise technique analysis.",
+                p1_title: "AI SEEKERIS",
+                p1_desc: "B2B video analytics · SaaS product. Detects events on video and sends alerts to Telegram in seconds.",
                 p2_title: "AI Content Agent",
-                p2_desc: "Automated IT news aggregation and rewriting system for a Telegram channel. Full pipeline: parsing → LLM processing → publishing. Self-hosted via n8n.",
-                p3_title: "AI SEEKERIS (VSaaS AI Agent)",
-                p3_desc: "Hybrid architecture design for B2B video analytics. Local AI agent for video surveillance with computer vision, violation detection, and Telegram notifications.",
-                p4_title: "Avtobys Clone",
-                p4_desc: "Functional clone of a popular transit application. Complex mobile navigation, adaptive UI/UX architecture, and interactive components.",
+                p2_desc: "Telegram channel automation. Source parsing → LLM processing → publishing, running 24/7.",
+                p3_title: "Clean Living",
+                p3_desc: "Mobile habit tracker. App for building habits with reminders and visual progress.",
+                val_title: "Why Work With Me",
+                val1_title: "Full Cycle",
+                val1_desc: "Entire stack without outsourcing tasks",
+                val2_title: "Automation",
+                val2_desc: "Remove routine through AI",
+                val3_title: "Reliable Infrastructure",
+                val3_desc: "Environment for autonomous 24/7 operation",
+                val4_title: "Speed to Launch",
+                val4_desc: "From idea to deployment fast",
                 skills_title: "Tech Stack & Tools",
                 skill_ai: "🤖 AI & Automation",
-                skill_dev: "📱 Development",
-                skill_sys: "🖥 System Administration",
+                skill_frontend: "🖥 Frontend",
+                skill_backend: "🗄 Backend & Data",
+                skill_infra: "🏗 Infrastructure",
                 footer_text: "Built by darknesslake. Hosted on GitHub Pages."
             },
             ru: {
                 nav_about: "Обо мне",
+                nav_experience: "Опыт",
                 nav_ai: "AI Интеграция",
                 nav_projects: "Проекты",
                 nav_skills: "Навыки",
                 hero_greeting: "Всем привет, я",
-                hero_role1: "AI Automation Engineer",
-                hero_role2: "& Мобильный разработчик.",
-                hero_desc: "Я специализируюсь на создании интеллектуальных кроссплатформенных приложений и автоматизации сложных бизнес-процессов. Фокусируюсь на интеграции больших языковых моделей (LLMs) и компьютерного зрения в мобильные среды.",
+                hero_role1: "AI Developer · n8n Integrator",
+                hero_role2: "& Full-Stack.",
+                hero_desc: "Строю продукты, которые снижают издержки бизнеса за счёт AI: от компьютерного зрения и автономных агентов до фронтенда и серверной инфраструктуры. Закрываю весь цикл — проектирование, разработка, деплой.",
                 btn_github: "Профиль GitHub",
                 btn_contact: "Связаться",
-                about_title: "О моем пути",
-                about_text: "Мой опыт включает управление критической инфраструктурой в авиационной отрасли, что научило меня писать отказоустойчивый код, поддерживать строгий контроль качества и глубоко заботиться об архитектуре систем. Я перешел в IT, чтобы создавать продукты, решающие реальные проблемы. Сегодня я объединяю свой строгий операционный опыт с современными технологиями, такими как React Native, TypeScript и AI API, для создания масштабируемых интеллектуальных программных решений.",
+                about_title: "О моём пути",
+                about_text: "Мой опыт включает управление критической инфраструктурой в авиационной отрасли, что научило меня писать отказоустойчивый код, поддерживать строгий контроль качества и глубоко заботиться об архитектуре систем. Я перешёл в IT, чтобы создавать продукты, решающие реальные проблемы. Сегодня я объединяю свой строгий операционный опыт с современными технологиями, такими как React Native, TypeScript и AI API, для создания масштабируемых интеллектуальных программных решений.",
+                exp_title: "Опыт работы",
+                exp1_role: "Project Manager & Developer",
+                exp1_period: "Янв 2026 — н.в.",
+                exp1_b1: "Спроектировал архитектуру AI-системы видеоаналитики",
+                exp1_b2: "Развернул двуязычный сайт с SEO и n8n-интеграцией",
+                exp1_b3: "Настроил Docker, Nginx, VPS-инфраструктуру",
+                exp1_b4: "Реализовал LLM-интеграции и автоматические пайплайны",
+                exp2_role: "Инженер-интегратор",
+                exp2_company: "Личная практика",
+                exp2_b1: "End-to-end AI-пайплайны в n8n",
+                exp2_b2: "Self-hosted инфраструктура",
+                exp3_role: "Инженер ГСМ",
+                exp3_company: "Аэропорт «ОРАЛ»",
+                exp3_period: "Сен 2022 — Мар 2026",
                 ai_title: "ИИ Интеграция и Автоматизация",
                 ai_headline: "Сквозные AI-пайплайны с n8n",
                 ai_desc: "Я проектирую и развертываю автономные рабочие процессы автоматизации ИИ (self-hosted), которые объединяют LLM, API и платформы обмена сообщениями в готовые к работе пайплайны. От сбора данных до генерации и публикации контента — полностью автоматизировано, работает 24/7 на моей собственной инфраструктуре.",
@@ -581,18 +606,26 @@
                 cap3_title: "Self-Hosted Инфраструктура",
                 cap3_desc: "Docker + Nginx Proxy Manager + SSL. Полный контроль, никакой привязки к вендору.",
                 projects_title: "Популярные проекты",
-                p1_title: "CleanLiving AI Приложение",
-                p1_desc: "MVP приложение для трекинга привычек, созданное с помощью Vibe Coding. Персонализированная генерация тренировок через Claude API и анализ техники выполнения упражнений в реальном времени.",
+                p1_title: "AI SEEKERIS",
+                p1_desc: "B2B видеоаналитика · SaaS-продукт. Система детектирует события на видео и отправляет алерты в Telegram за секунды.",
                 p2_title: "AI Контент-агент",
-                p2_desc: "Автоматизированная система агрегации и переписывания IT-новостей для Telegram-канала. Полный цикл: парсинг → обработка LLM → публикация. Развернуто через n8n.",
-                p3_title: "AI SEEKERIS (VSaaS AI Agent)",
-                p3_desc: "Гибридная архитектура для B2B видеоаналитики. Локальный AI-агент для видеонаблюдения с компьютерным зрением, обнаружением нарушений и алертами в Telegram.",
-                p4_title: "Клон Avtobys",
-                p4_desc: "Функциональный клон популярного транспортного приложения. Сложная мобильная навигация, адаптивная UI/UX архитектура и интерактивные компоненты.",
+                p2_desc: "Автоматизация Telegram-канала. Парсинг источников → обработка LLM → публикация, работает 24/7.",
+                p3_title: "Clean Living",
+                p3_desc: "Мобильный трекер привычек. Приложение для формирования привычек с напоминаниями и визуальным прогрессом.",
+                val_title: "Почему я",
+                val1_title: "Полный цикл",
+                val1_desc: "Весь стек без передачи задач",
+                val2_title: "Автоматизация",
+                val2_desc: "Убираю рутину через AI",
+                val3_title: "Надёжная инфраструктура",
+                val3_desc: "Настраиваю окружение для автономной работы",
+                val4_title: "Скорость запуска",
+                val4_desc: "От идеи до деплоя в кратчайшие сроки",
                 skills_title: "Технологический стек",
                 skill_ai: "🤖 ИИ и Автоматизация",
-                skill_dev: "📱 Разработка",
-                skill_sys: "🖥 Системное администрирование",
+                skill_frontend: "🖥 Frontend",
+                skill_backend: "🗄 Backend и данные",
+                skill_infra: "🏗 Инфраструктура",
                 footer_text: "Создано darknesslake. Размещено на GitHub Pages."
             }
         };
