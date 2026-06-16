@@ -4,135 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>darknesslake | Portfolio</title>
+    <title>Denis (darknesslake) — Full-stack & AI developer</title>
+    <meta name="description" content="Denis — full-stack & AI developer from Kazakhstan. Open to full-time. Building Sirekees — no-code store builder for Telegram Mini App + web.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: #000;
+            color: #cbd5e1;
         }
 
-        .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        html { scroll-behavior: smooth; }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
         }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
 
         .lang-btn {
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
             cursor: pointer;
             transition: all .2s;
             border: 1px solid transparent;
             background: transparent;
             color: #94a3b8;
+            font-family: inherit;
         }
-
         .lang-btn.active {
-            background: #3b82f6;
-            color: #fff;
-            border-color: #3b82f6;
+            background: #ffffff;
+            color: #0f172a;
+            border-color: #ffffff;
         }
-
         .lang-btn:not(.active):hover {
             color: #e2e8f0;
-            border-color: #475569;
+            border-color: rgba(255, 255, 255, .15);
         }
 
-        .glow-card {
-            position: relative;
-        }
-
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 1rem;
-            background: linear-gradient(135deg, #6E44FF 0%, #EA4B71 50%, #3b82f6 100%);
-            z-index: -1;
-            opacity: .5;
-            filter: blur(2px);
-            transition: opacity .3s;
-        }
-
-        .glow-card:hover::before {
-            opacity: .8;
-        }
-
-        .pipeline-flow {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .pipeline-step {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            background: rgba(30, 41, 59, .8);
-            border: 1px solid #334155;
-            border-radius: 10px;
-            font-size: 13px;
-            color: #cbd5e1;
-            white-space: nowrap;
-            transition: all .3s;
-        }
-
-        .pipeline-step:hover {
-            border-color: #6E44FF;
-            background: rgba(110, 68, 255, .1);
-            transform: translateY(-2px);
-        }
-
-        .pipeline-arrow {
-            color: #6E44FF;
-            font-size: 20px;
-            margin: 0 4px;
-            animation: arrowPulse 1.5s ease-in-out infinite;
-        }
-
-        @keyframes arrowPulse {
-            0%, 100% { opacity: .4; }
-            50% { opacity: 1; }
+        .glow-text {
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-blue-500 selection:text-white flex flex-col min-h-screen">
+<body class="antialiased selection:bg-white selection:text-black flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-black/75 border-b border-white/5">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-xl tracking-tight text-slate-100 hover:text-blue-400 transition relative z-50">DP.</a>
+            <a href="#" class="font-semibold text-base tracking-tight text-white hover:opacity-90 transition relative z-50">darknesslake</a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
                 <a href="#about" class="hover:text-white transition" data-i18n="nav_about">About</a>
-                <a href="#experience" class="hover:text-white transition" data-i18n="nav_experience">Experience</a>
-                <a href="#ai-integration" class="hover:text-white transition" data-i18n="nav_ai">AI Integration</a>
                 <a href="#projects" class="hover:text-white transition" data-i18n="nav_projects">Projects</a>
-                <a href="#skills" class="hover:text-white transition" data-i18n="nav_skills">Skills</a>
-                <div class="flex gap-1 ml-2 border-l border-slate-700 pl-4">
+                <a href="#experience" class="hover:text-white transition" data-i18n="nav_experience">Experience</a>
+                <a href="#stack" class="hover:text-white transition" data-i18n="nav_stack">Stack</a>
+                <div class="flex gap-1 ml-2 border-l border-white/10 pl-4">
                     <button class="lang-btn btn-en active" onclick="setLang('en')">EN</button>
                     <button class="lang-btn btn-ru" onclick="setLang('ru')">RU</button>
                 </div>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <div class="flex md:hidden items-center gap-4 relative z-50">
-                <div class="flex gap-1 border-slate-700">
+            <!-- Mobile -->
+            <div class="flex md:hidden items-center gap-3 relative z-50">
+                <div class="flex gap-1">
                     <button class="lang-btn btn-en active" onclick="setLang('en')">EN</button>
                     <button class="lang-btn btn-ru" onclick="setLang('ru')">RU</button>
                 </div>
-                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none" aria-label="Menu">
                     <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -141,112 +87,241 @@
                     </svg>
                 </button>
 
-                <!-- Mobile Dropdown Menu -->
-                <div id="mobile-menu" class="absolute top-12 right-0 w-56 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl hidden flex-col py-2 z-50 opacity-0 transition-opacity duration-200">
-                    <a href="#about" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_about">About</a>
-                    <a href="#experience" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_experience">Experience</a>
-                    <a href="#ai-integration" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_ai">AI Integration</a>
-                    <a href="#projects" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_projects">Projects</a>
-                    <a href="#skills" class="mobile-link px-5 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 transition text-sm font-medium" data-i18n="nav_skills">Skills</a>
+                <div id="mobile-menu" class="absolute top-12 right-0 w-56 rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl shadow-2xl hidden flex-col py-2 z-50 opacity-0 transition-opacity duration-200">
+                    <a href="#about" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_about">About</a>
+                    <a href="#projects" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_projects">Projects</a>
+                    <a href="#experience" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_experience">Experience</a>
+                    <a href="#stack" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_stack">Stack</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <main class="flex-grow pt-24 pb-12">
-        <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
-            <div class="max-w-3xl">
-                <p class="text-blue-400 font-medium mb-4 tracking-wide uppercase text-sm" data-i18n="hero_greeting">Hi there, I am</p>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-slate-100 tracking-tight">darknesslake</h1>
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-slate-400">
-                    <span class="gradient-text" data-i18n="hero_role1">AI Developer · n8n Integrator</span> <br>
-                    <span data-i18n="hero_role2">& Full-Stack.</span>
-                </h2>
-                <p class="text-lg text-slate-400 mb-10 leading-relaxed max-w-2xl" data-i18n="hero_desc">
-                    I build products that reduce business costs through AI: from computer vision and autonomous agents to frontend and server infrastructure. I cover the full cycle — design, development, deployment.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/darknesslake" target="_blank"
-                        class="flex items-center gap-2 bg-slate-100 text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-white transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                clip-rule="evenodd"></path>
+        <!-- Hero -->
+        <section class="max-w-5xl mx-auto px-6 pt-20 pb-20">
+            <div class="max-w-3xl fade-up">
+                <div class="flex flex-wrap items-center gap-2 mb-7">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-xs font-medium">
+                        <span class="relative flex h-1.5 w-1.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
+                        </span>
+                        <span data-i18n="hero_status">Open to full-time</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-300 text-xs font-medium">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
-                        <span data-i18n="btn_github">GitHub Profile</span>
+                        <span data-i18n="hero_location">Kazakhstan · GMT+5</span>
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight glow-text leading-[1.05]" data-i18n="hero_h1">Building products end-to-end.</h1>
+                <h2 class="text-xl md:text-2xl font-medium mb-8 text-slate-400 tracking-tight leading-snug" data-i18n="hero_role">
+                    Hi, I'm Denis (<span class="text-slate-300">@darknesslake</span>) — full-stack & AI developer, solo founder of Sirekees.
+                </h2>
+                <p class="text-base md:text-lg text-slate-400 mb-10 leading-relaxed max-w-2xl" data-i18n="hero_desc">
+                    I ship products end-to-end — Next.js apps, Telegram Mini Apps, AI agents, self-hosted infra. Solo founder. Currently building Sirekees — a no-code store builder for local small business.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://github.com/darknesslake" target="_blank"
+                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-white text-slate-900 text-sm font-semibold hover:opacity-90 active:scale-[.985] transition-all duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span data-i18n="btn_github">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/darknesslake/" target="_blank"
+                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span data-i18n="btn_linkedin">LinkedIn</span>
                     </a>
                     <a href="https://t.me/darknesslake" target="_blank"
-                        class="flex items-center gap-2 bg-slate-800 text-slate-100 border border-slate-700 px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition hover:-translate-y-0.5 duration-200">
-                        <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.117.095.152.227.166.331.011.082.022.264.013.414z" />
+                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.117.095.152.227.166.331.011.082.022.264.013.414z" />
                         </svg>
-                        <span data-i18n="btn_contact">Contact Me</span>
+                        <span data-i18n="btn_contact">Telegram</span>
+                    </a>
+                    <a href="mailto:vabcax@gmail.com"
+                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span data-i18n="btn_email">Email</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="about_title">About My Journey</span>
+        <!-- About -->
+        <section id="about" class="max-w-5xl mx-auto px-6 py-12">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+                <span class="w-8 h-px bg-white/20"></span>
+                <span data-i18n="about_title">About</span>
             </h3>
-            <div class="bg-slate-800/50 rounded-2xl p-8 border border-slate-700/50">
+            <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 md:p-8">
                 <p class="text-slate-300 leading-relaxed" data-i18n="about_text">
-                    My background includes managing critical infrastructure in the aviation industry, which taught me to
-                    write fault-tolerant code, maintain strict quality control, and deeply care about system
-                    architecture. I transitioned into IT to build products that solve real-world problems. Today, I
-                    combine my rigorous operational experience with modern technologies like React Native, TypeScript,
-                    and AI APIs to create scalable, intelligent software solutions.
+                    I cover the full product cycle solo: design, code, deploy, run in production. Came to development from operating critical infrastructure at an airport — that's where the habit of writing code that doesn't fall over comes from. Now building Sirekees and other AI-driven products for small business.
                 </p>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-emerald-500"></span> <span data-i18n="exp_title">Work Experience</span>
+        <!-- Projects -->
+        <section id="projects" class="max-w-5xl mx-auto px-6 py-12">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+                <span class="w-8 h-px bg-white/20"></span>
+                <span data-i18n="projects_title">Featured projects</span>
             </h3>
-            <div class="space-y-4">
-                <!-- Position 1 -->
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Sirekees -->
+                <article class="fade-up rounded-2xl border border-white/15 bg-white/[0.05] backdrop-blur-xl p-6 hover:border-white/25 hover:bg-white/[0.07] transition-all duration-300 flex flex-col md:col-span-2">
+                    <div class="flex justify-between items-start mb-5 gap-3">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-200 text-[11px] font-medium" data-i18n="p0_tag_active">Active · Solo founder</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium">
+                                <span class="relative flex h-1.5 w-1.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-60"></span>
+                                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
+                                </span>
+                                <span data-i18n="p0_tag_main">Main project</span>
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-white mb-3 tracking-tight">Sirekees</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl" data-i18n="p0_desc">
+                        No-code store builder for local small business. Two apps in a Turborepo monorepo: <span class="text-slate-200">admin</span> (owner panel) and <span class="text-slate-200">tma</span> (storefront renderer by bot_id — same engine renders the Telegram Mini App and the public web catalog at <code class="text-[12px] text-slate-300">/store/[bot_id]</code>). AI store editor, loyalty program (points + stamp cards), payments via Re:Kassa, AI consultant that answers customers.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mt-auto">
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Next.js 15</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Turborepo</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">TypeScript</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Tailwind 4</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Supabase</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Firebase</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">@twa-dev/sdk</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">xAI Grok</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">PostgreSQL</span>
+                    </div>
+                </article>
+
+                <!-- Personal projects -->
+                <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p1_tag">B2B · SaaS</span>
+                        <a href="https://aiseekeris.space/" target="_blank" class="text-slate-400 hover:text-white transition" aria-label="Open project">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2 group-hover:text-white transition" data-i18n="p1_title">Personal projects</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow" data-i18n="p1_desc">
+                        B2B video analytics. Detects events on video streams and pushes alerts to Telegram in seconds. Designed the system architecture and shipped the bilingual marketing site.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Python</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">OpenCV</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">YOLO</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">PostgreSQL</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Docker</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Telegram Bot API</span>
+                    </div>
+                </article>
+
+                <!-- AI Content Agent -->
+                <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p2_tag">Self-hosted · 24/7</span>
+                        <a href="https://github.com/darknesslake" target="_blank" class="text-slate-400 hover:text-white transition" aria-label="GitHub">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2" data-i18n="p2_title">AI Content Agent</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow" data-i18n="p2_desc">
+                        Telegram channel automation. n8n pipeline: source parsing → Claude rewrite → scheduled publish. Self-hosted on a VPS, runs 24/7 without manual touch.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">n8n</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Claude API</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Python</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Docker</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Telegram Bot API</span>
+                    </div>
+                </article>
+
+                <!-- Clean Living -->
+                <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col md:col-span-2">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p3_tag">Mobile · React Native</span>
+                        <a href="https://github.com/darknesslake/cleanliving-app" target="_blank" class="text-slate-400 hover:text-white transition" aria-label="GitHub">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2" data-i18n="p3_title">Clean Living</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow max-w-3xl" data-i18n="p3_desc">
+                        Mobile habit tracker. React Native + Expo, Firebase backend, Claude API for AI suggestions. Designed and shipped solo end-to-end.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">React Native</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">TypeScript</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Expo</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Firebase</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Claude API</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="max-w-5xl mx-auto px-6 py-12">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+                <span class="w-8 h-px bg-white/20"></span>
+                <span data-i18n="exp_title">Experience</span>
+            </h3>
+            <div class="space-y-3">
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/15 transition-colors">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-100" data-i18n="exp1_role">Project Manager & Developer</h4>
-                            <p class="text-emerald-400 font-medium text-sm">SEEKERIS</p>
+                            <h4 class="text-base font-semibold text-white" data-i18n="exp0_role">Founder & Solo developer</h4>
+                            <p class="text-slate-400 text-sm">Sirekees</p>
+                        </div>
+                        <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp0_period">2026 — Present</span>
+                    </div>
+                    <ul class="space-y-1.5 text-slate-400 text-sm">
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b1">Designed and shipped a Turborepo monorepo (admin + tma) on Next.js 15 + Supabase + Firebase</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b2">Built an AI store editor on xAI Grok (tools API) that edits the catalog from chat</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b3">Loyalty program (points + stamp cards), bookings, Re:Kassa payments, webhook flow</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b4">Own design system: glass surfaces, unified Button / Idealochka modal, white pill CTAs</span></li>
+                    </ul>
+                </div>
+
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/15 transition-colors">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                        <div>
+                            <h4 class="text-base font-semibold text-white" data-i18n="exp1_role">Project Manager & Developer</h4>
+                            <p class="text-slate-400 text-sm" data-i18n="exp1_company">Personal projects</p>
                         </div>
                         <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp1_period">Jan 2026 — Present</span>
                     </div>
-                    <ul class="space-y-2 text-slate-400 text-sm">
-                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b1">Designed AI video analytics system architecture</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b2">Deployed bilingual website with SEO and n8n integration</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b3">Configured Docker, Nginx, VPS infrastructure</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></span><span data-i18n="exp1_b4">Implemented LLM integrations and automated pipelines</span></li>
+                    <ul class="space-y-1.5 text-slate-400 text-sm">
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp1_b1">Designed the AI video analytics system architecture</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp1_b2">Shipped a bilingual marketing site with SEO and n8n lead pipeline</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp1_b3">Set up Docker + Nginx + VPS infra with SSL</span></li>
                     </ul>
                 </div>
 
-                <!-- Position 2 -->
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-violet-500/30 transition">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-100" data-i18n="exp2_role">AI Integration Engineer</h4>
-                            <p class="text-violet-400 font-medium text-sm" data-i18n="exp2_company">Personal Practice</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-slate-400 text-sm">
-                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400 mt-1.5 shrink-0"></span><span data-i18n="exp2_b1">End-to-end AI pipelines in n8n</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400 mt-1.5 shrink-0"></span><span data-i18n="exp2_b2">Self-hosted infrastructure</span></li>
-                    </ul>
-                </div>
-
-                <!-- Position 3 -->
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/30 transition">
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/15 transition-colors">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-100" data-i18n="exp3_role">Fuel Supply Engineer</h4>
-                            <p class="text-orange-400 font-medium text-sm" data-i18n="exp3_company">Airport "ORAL"</p>
+                            <h4 class="text-base font-semibold text-white" data-i18n="exp3_role">Fuel Supply Engineer</h4>
+                            <p class="text-slate-400 text-sm" data-i18n="exp3_company">Oral International Airport</p>
                         </div>
                         <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp3_period">Sep 2022 — Mar 2026</span>
                     </div>
@@ -254,233 +329,55 @@
             </div>
         </section>
 
-        <!-- AI Integration Section -->
-        <section id="ai-integration" class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-violet-500"></span> <span data-i18n="ai_title">AI Integration &
-                    Automation</span>
+        <!-- Stack -->
+        <section id="stack" class="max-w-5xl mx-auto px-6 py-12">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+                <span class="w-8 h-px bg-white/20"></span>
+                <span data-i18n="stack_title">Stack</span>
             </h3>
 
-            <div class="glow-card bg-slate-800/60 rounded-2xl p-8 border border-slate-700/50 mb-8">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-3xl">⚡</span>
-                    <h4 class="text-xl font-bold text-slate-100" data-i18n="ai_headline">End-to-End AI Pipelines with
-                        n8n</h4>
-                </div>
-                <p class="text-slate-400 mb-6 leading-relaxed" data-i18n="ai_desc">
-                    I design and deploy self-hosted AI automation workflows that connect LLMs, APIs, and messaging
-                    platforms into production-ready pipelines. From data ingestion to content generation and publishing —
-                    fully automated, running 24/7 on my own infrastructure.
-                </p>
-
-                <!-- Visual Pipeline -->
-                <div class="pipeline-flow mb-8">
-                    <div class="pipeline-step">📡 <span data-i18n="pipe_1">Data Sources</span></div>
-                    <span class="pipeline-arrow">→</span>
-                    <div class="pipeline-step">⚙️ n8n</div>
-                    <span class="pipeline-arrow">→</span>
-                    <div class="pipeline-step">🧠 Claude API</div>
-                    <span class="pipeline-arrow">→</span>
-                    <div class="pipeline-step">✍️ <span data-i18n="pipe_4">Content Gen</span></div>
-                    <span class="pipeline-arrow">→</span>
-                    <div class="pipeline-step">📲 Telegram</div>
-                </div>
-
-                <!-- Capabilities Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
-                        <div class="text-2xl mb-2">🔗</div>
-                        <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap1_title">Workflow Orchestration</h5>
-                        <p class="text-slate-500 text-sm" data-i18n="cap1_desc">Multi-step n8n workflows with
-                            conditional logic, error handling, and scheduled triggers.</p>
-                    </div>
-                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
-                        <div class="text-2xl mb-2">🤖</div>
-                        <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap2_title">LLM Integration</h5>
-                        <p class="text-slate-500 text-sm" data-i18n="cap2_desc">Claude API for content rewriting,
-                            summarization, and intelligent data processing.</p>
-                    </div>
-                    <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/40 hover:border-violet-500/40 transition">
-                        <div class="text-2xl mb-2">🛡️</div>
-                        <h5 class="font-semibold text-slate-200 mb-1" data-i18n="cap3_title">Self-Hosted Infra</h5>
-                        <p class="text-slate-500 text-sm" data-i18n="cap3_desc">Docker + Nginx Proxy Manager + SSL. Full
-                            control, no vendor lock-in.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="projects_title">Featured Projects</span>
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Project 1: AI SEEKERIS -->
-                <div class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-4xl">📹</div>
-                        <a href="https://aiseekeris.space/" target="_blank"
-                            class="text-slate-400 hover:text-blue-400 transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p1_title">AI SEEKERIS</h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p1_desc">
-                        B2B video analytics · SaaS product. Detects events on video and sends alerts to Telegram in seconds.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Python</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">OpenCV</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">PostgreSQL</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">Docker</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20">Telegram Bot API</span>
-                    </div>
-                </div>
-
-                <!-- Project 2: AI Content Agent -->
-                <div class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-4xl">🤖</div>
-                        <a href="https://github.com/darknesslake" target="_blank"
-                            class="text-slate-400 hover:text-blue-400 transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p2_title">AI Content Agent</h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p2_desc">
-                        Telegram channel automation. Source parsing → LLM processing → publishing, running 24/7.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="px-3 py-1 text-xs font-medium bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">n8n</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">Docker</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">Claude API</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Python</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-sky-500/10 text-sky-400 rounded-full border border-sky-500/20">Telegram Bot API</span>
-                    </div>
-                </div>
-
-                <!-- Project 3: Clean Living -->
-                <div class="group bg-slate-800/40 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-6 transition duration-300 hover:bg-slate-800/80 flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-4xl">🏋️‍♂️</div>
-                        <a href="https://github.com/darknesslake/cleanliving-app" target="_blank"
-                            class="text-slate-400 hover:text-blue-400 transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition" data-i18n="p3_title">Clean Living</h4>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow" data-i18n="p3_desc">
-                        Mobile habit tracker. App for building habits with reminders and visual progress.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">React Native</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">TypeScript</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-slate-600/30 text-slate-300 rounded-full border border-slate-600/50">Expo</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20">Firebase</span>
-                        <span class="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">Claude API</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Value Proposition Section -->
-        <section id="values" class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-amber-500"></span> <span data-i18n="val_title">Why Work With Me</span>
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition">
-                    <div class="text-3xl mb-3">🔄</div>
-                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val1_title">Full Cycle</h4>
-                    <p class="text-slate-400 text-sm" data-i18n="val1_desc">Entire stack without outsourcing tasks</p>
-                </div>
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-violet-500/30 transition">
-                    <div class="text-3xl mb-3">🤖</div>
-                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val2_title">Automation</h4>
-                    <p class="text-slate-400 text-sm" data-i18n="val2_desc">Remove routine through AI</p>
-                </div>
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-emerald-500/30 transition">
-                    <div class="text-3xl mb-3">🛡️</div>
-                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val3_title">Reliable Infrastructure</h4>
-                    <p class="text-slate-400 text-sm" data-i18n="val3_desc">Environment for autonomous 24/7 operation</p>
-                </div>
-                <div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/30 transition">
-                    <div class="text-3xl mb-3">⚡</div>
-                    <h4 class="font-bold text-slate-100 mb-2" data-i18n="val4_title">Speed to Launch</h4>
-                    <p class="text-slate-400 text-sm" data-i18n="val4_desc">From idea to deployment fast</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="max-w-5xl mx-auto px-6 py-16">
-            <h3 class="text-2xl font-bold text-slate-100 mb-8 flex items-center gap-3">
-                <span class="w-8 h-px bg-blue-500"></span> <span data-i18n="skills_title">Tech Stack & Tools</span>
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-                <!-- AI & Automation -->
-                <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_ai">🤖 AI & Automation</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Claude API</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Gemini</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Prompt Engineering</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>n8n</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>OpenCV</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>YOLO</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Edge AI</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Python</li>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
+                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_frontend">Frontend</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>Next.js 15 (App Router)</li>
+                        <li>React 19, TypeScript</li>
+                        <li>Tailwind CSS 4</li>
+                        <li>React Native, Expo</li>
+                        <li>@twa-dev/sdk</li>
                     </ul>
                 </div>
 
-                <!-- Frontend -->
-                <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_frontend">🖥 Frontend</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>HTML / CSS</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Tailwind CSS</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>JavaScript</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>React Native</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>TypeScript</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Expo</li>
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
+                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_backend">Backend & Data</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>Supabase (Postgres, RLS)</li>
+                        <li>Firebase (Auth, Admin SDK)</li>
+                        <li>Server Actions, Route Handlers</li>
+                        <li>Telegram Bot API, webhooks</li>
+                        <li>Re:Kassa payment integration</li>
                     </ul>
                 </div>
 
-                <!-- Backend & Data -->
-                <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_backend">🗄 Backend & Data</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>PostgreSQL</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Firebase</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Telegram Bot API</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>REST / Webhook</li>
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
+                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_ai">AI & Automation</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>xAI Grok (tools API)</li>
+                        <li>Claude API</li>
+                        <li>n8n (self-hosted workflows)</li>
+                        <li>OpenCV, YOLO</li>
+                        <li>Prompt engineering</li>
                     </ul>
                 </div>
 
-                <!-- Infrastructure -->
-                <div>
-                    <h4 class="text-slate-300 font-semibold mb-4 pb-2 border-b border-slate-700" data-i18n="skill_infra">🏗 Infrastructure</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Docker</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Docker Compose</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Nginx</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Ubuntu VPS</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>SSL / TLS</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>SSH / rsync</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>Git</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>macOS</li>
+                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
+                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_infra">Infra & Tooling</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>Turborepo, npm workspaces</li>
+                        <li>Docker, Docker Compose</li>
+                        <li>Nginx Proxy Manager, SSL</li>
+                        <li>Ubuntu VPS, SSH, rsync</li>
+                        <li>Git, GitHub Actions</li>
                     </ul>
                 </div>
             </div>
@@ -488,14 +385,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-slate-900/50 mt-auto py-8">
+    <footer class="border-t border-white/5 bg-black mt-auto py-8">
         <div class="max-w-5xl mx-auto px-6 flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-4">
-            <p class="text-slate-500 text-sm text-center md:text-left leading-relaxed" data-i18n="footer_text">
+            <p class="text-slate-500 text-sm text-center md:text-left" data-i18n="footer_text">
                 Built by darknesslake. Hosted on GitHub Pages.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                <a href="https://www.linkedin.com/in/darknesslake/" target="_blank"
+                    class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
                 <a href="mailto:vabcax@gmail.com"
-                    class="text-slate-400 hover:text-white transition flex items-center gap-2">
+                    class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition text-sm">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     vabcax@gmail.com
                 </a>
@@ -507,127 +409,107 @@
         const translations = {
             en: {
                 nav_about: "About",
-                nav_experience: "Experience",
-                nav_ai: "AI Integration",
                 nav_projects: "Projects",
-                nav_skills: "Skills",
-                hero_greeting: "Hi there, I am",
-                hero_role1: "AI Developer · n8n Integrator",
-                hero_role2: "& Full-Stack.",
-                hero_desc: "I build products that reduce business costs through AI: from computer vision and autonomous agents to frontend and server infrastructure. I cover the full cycle — design, development, deployment.",
-                btn_github: "GitHub Profile",
-                btn_contact: "Contact Me",
-                about_title: "About My Journey",
-                about_text: "My background includes managing critical infrastructure in the aviation industry, which taught me to write fault-tolerant code, maintain strict quality control, and deeply care about system architecture. I transitioned into IT to build products that solve real-world problems. Today, I combine my rigorous operational experience with modern technologies like React Native, TypeScript, and AI APIs to create scalable, intelligent software solutions.",
-                exp_title: "Work Experience",
-                exp1_role: "Project Manager & Developer",
-                exp1_period: "Jan 2026 — Present",
-                exp1_b1: "Designed AI video analytics system architecture",
-                exp1_b2: "Deployed bilingual website with SEO and n8n integration",
-                exp1_b3: "Configured Docker, Nginx, VPS infrastructure",
-                exp1_b4: "Implemented LLM integrations and automated pipelines",
-                exp2_role: "AI Integration Engineer",
-                exp2_company: "Personal Practice",
-                exp2_b1: "End-to-end AI pipelines in n8n",
-                exp2_b2: "Self-hosted infrastructure",
-                exp3_role: "Fuel Supply Engineer",
-                exp3_company: 'Airport "ORAL"',
-                exp3_period: "Sep 2022 — Mar 2026",
-                ai_title: "AI Integration & Automation",
-                ai_headline: "End-to-End AI Pipelines with n8n",
-                ai_desc: "I design and deploy self-hosted AI automation workflows that connect LLMs, APIs, and messaging platforms into production-ready pipelines. From data ingestion to content generation and publishing — fully automated, running 24/7 on my own infrastructure.",
-                pipe_1: "Data Sources",
-                pipe_4: "Content Gen",
-                cap1_title: "Workflow Orchestration",
-                cap1_desc: "Multi-step n8n workflows with conditional logic, error handling, and scheduled triggers.",
-                cap2_title: "LLM Integration",
-                cap2_desc: "Claude API for content rewriting, summarization, and intelligent data processing.",
-                cap3_title: "Self-Hosted Infra",
-                cap3_desc: "Docker + Nginx Proxy Manager + SSL. Full control, no vendor lock-in.",
-                projects_title: "Featured Projects",
-                p1_title: "AI SEEKERIS",
-                p1_desc: "B2B video analytics · SaaS product. Detects events on video and sends alerts to Telegram in seconds.",
+                nav_experience: "Experience",
+                nav_stack: "Stack",
+                hero_status: "Open to full-time",
+                hero_location: "Kazakhstan · GMT+5",
+                hero_h1: "Building products end-to-end.",
+                hero_role: "Hi, I'm Denis (<span class='text-slate-300'>@darknesslake</span>) — full-stack & AI developer, solo founder of Sirekees.",
+                hero_desc: "I ship products end-to-end — Next.js apps, Telegram Mini Apps, AI agents, self-hosted infra. Solo founder. Currently building Sirekees — a no-code store builder for local small business.",
+                btn_github: "GitHub",
+                btn_linkedin: "LinkedIn",
+                btn_contact: "Telegram",
+                btn_email: "Email",
+                about_title: "About",
+                about_text: "I cover the full product cycle solo: design, code, deploy, run in production. Came to development from operating critical infrastructure at an airport — that's where the habit of writing code that doesn't fall over comes from. Now building Sirekees and other AI-driven products for small business.",
+                projects_title: "Featured projects",
+                p0_tag_active: "Active · Solo founder",
+                p0_tag_main: "Main project",
+                p0_desc: "No-code store builder for local small business. Two apps in a Turborepo monorepo: <span class='text-slate-200'>admin</span> (owner panel) and <span class='text-slate-200'>tma</span> (storefront renderer by bot_id — same engine renders the Telegram Mini App and the public web catalog at <code class='text-[12px] text-slate-300'>/store/[bot_id]</code>). AI store editor, loyalty program (points + stamp cards), payments via Re:Kassa, AI consultant that answers customers.",
+                p1_tag: "B2B · SaaS",
+                p1_title: "Personal projects",
+                p1_desc: "B2B video analytics. Detects events on video streams and pushes alerts to Telegram in seconds. Designed the system architecture and shipped the bilingual marketing site.",
+                p2_tag: "Self-hosted · 24/7",
                 p2_title: "AI Content Agent",
-                p2_desc: "Telegram channel automation. Source parsing → LLM processing → publishing, running 24/7.",
+                p2_desc: "Telegram channel automation. n8n pipeline: source parsing → Claude rewrite → scheduled publish. Self-hosted on a VPS, runs 24/7 without manual touch.",
+                p3_tag: "Mobile · React Native",
                 p3_title: "Clean Living",
-                p3_desc: "Mobile habit tracker. App for building habits with reminders and visual progress.",
-                val_title: "Why Work With Me",
-                val1_title: "Full Cycle",
-                val1_desc: "Entire stack without outsourcing tasks",
-                val2_title: "Automation",
-                val2_desc: "Remove routine through AI",
-                val3_title: "Reliable Infrastructure",
-                val3_desc: "Environment for autonomous 24/7 operation",
-                val4_title: "Speed to Launch",
-                val4_desc: "From idea to deployment fast",
-                skills_title: "Tech Stack & Tools",
-                skill_ai: "🤖 AI & Automation",
-                skill_frontend: "🖥 Frontend",
-                skill_backend: "🗄 Backend & Data",
-                skill_infra: "🏗 Infrastructure",
+                p3_desc: "Mobile habit tracker. React Native + Expo, Firebase backend, Claude API for AI suggestions. Designed and shipped solo end-to-end.",
+                exp_title: "Experience",
+                exp0_role: "Founder & Solo developer",
+                exp0_period: "2026 — Present",
+                exp0_b1: "Designed and shipped a Turborepo monorepo (admin + tma) on Next.js 15 + Supabase + Firebase",
+                exp0_b2: "Built an AI store editor on xAI Grok (tools API) that edits the catalog from chat",
+                exp0_b3: "Loyalty program (points + stamp cards), bookings, Re:Kassa payments, webhook flow",
+                exp0_b4: "Own design system: glass surfaces, unified Button / Idealochka modal, white pill CTAs",
+                exp1_role: "Project Manager & Developer",
+                exp1_company: "Personal projects",
+                exp1_period: "Jan 2026 — Present",
+                exp1_b1: "Designed the AI video analytics system architecture",
+                exp1_b2: "Shipped a bilingual marketing site with SEO and n8n lead pipeline",
+                exp1_b3: "Set up Docker + Nginx + VPS infra with SSL",
+                exp3_role: "Fuel Supply Engineer",
+                exp3_company: "Oral International Airport",
+                exp3_period: "Sep 2022 — Mar 2026",
+                stack_title: "Stack",
+                stack_frontend: "Frontend",
+                stack_backend: "Backend & Data",
+                stack_ai: "AI & Automation",
+                stack_infra: "Infra & Tooling",
                 footer_text: "Built by darknesslake. Hosted on GitHub Pages."
             },
             ru: {
                 nav_about: "Обо мне",
-                nav_experience: "Опыт",
-                nav_ai: "AI Интеграция",
                 nav_projects: "Проекты",
-                nav_skills: "Навыки",
-                hero_greeting: "Всем привет, я",
-                hero_role1: "AI Developer · n8n Integrator",
-                hero_role2: "& Full-Stack.",
-                hero_desc: "Строю продукты, которые снижают издержки бизнеса за счёт AI: от компьютерного зрения и автономных агентов до фронтенда и серверной инфраструктуры. Закрываю весь цикл — проектирование, разработка, деплой.",
-                btn_github: "Профиль GitHub",
-                btn_contact: "Связаться",
-                about_title: "О моём пути",
-                about_text: "Мой опыт включает управление критической инфраструктурой в авиационной отрасли, что научило меня писать отказоустойчивый код, поддерживать строгий контроль качества и глубоко заботиться об архитектуре систем. Я перешёл в IT, чтобы создавать продукты, решающие реальные проблемы. Сегодня я объединяю свой строгий операционный опыт с современными технологиями, такими как React Native, TypeScript и AI API, для создания масштабируемых интеллектуальных программных решений.",
-                exp_title: "Опыт работы",
-                exp1_role: "Project Manager & Developer",
+                nav_experience: "Опыт",
+                nav_stack: "Стек",
+                hero_status: "Открыт к full-time",
+                hero_location: "Казахстан · GMT+5",
+                hero_h1: "Делаю продукты под ключ.",
+                hero_role: "Привет, я Денис (<span class='text-slate-300'>@darknesslake</span>) — full-stack и AI разработчик, соло-фаундер Sirekees.",
+                hero_desc: "Делаю продукты под ключ — Next.js приложения, Telegram Mini Apps, AI-агенты, self-hosted инфра. Соло-фаундер. Сейчас строю Sirekees — no-code конструктор магазинов для малого бизнеса.",
+                btn_github: "GitHub",
+                btn_linkedin: "LinkedIn",
+                btn_contact: "Telegram",
+                btn_email: "Email",
+                about_title: "Обо мне",
+                about_text: "Закрываю весь цикл продукта в одиночку: дизайн, код, деплой, эксплуатация в проде. В разработку пришёл из управления критической инфраструктурой в аэропорту — оттуда привычка писать код, который не падает. Сейчас строю Sirekees и другие AI-продукты для малого бизнеса.",
+                projects_title: "Проекты",
+                p0_tag_active: "Активный · соло",
+                p0_tag_main: "Основной проект",
+                p0_desc: "No-code конструктор онлайн-магазинов для малого бизнеса. Два приложения в Turborepo-монорепо: <span class='text-slate-200'>admin</span> (панель владельца) и <span class='text-slate-200'>tma</span> (движок витрины по bot_id — один и тот же рендерит Telegram Mini App и публичный веб-каталог по <code class='text-[12px] text-slate-300'>/store/[bot_id]</code>). AI-редактор магазина, программа лояльности (баллы + штамп-карты), приём платежей через Re:Kassa, AI-консультант для покупателей.",
+                p1_tag: "B2B · SaaS",
+                p1_title: "Личные проекты",
+                p1_desc: "B2B видеоаналитика. Детектирует события на видеопотоках и шлёт алерты в Telegram за секунды. Спроектировал архитектуру и собрал двуязычный лендинг.",
+                p2_tag: "Self-hosted · 24/7",
+                p2_title: "AI Content Agent",
+                p2_desc: "Автоматизация Telegram-канала. n8n-пайплайн: парсинг источников → переписывание через Claude → отложенная публикация. Self-hosted на VPS, работает 24/7 без касания.",
+                p3_tag: "Mobile · React Native",
+                p3_title: "Clean Living",
+                p3_desc: "Мобильный трекер привычек. React Native + Expo, Firebase, Claude API для AI-подсказок. Сделал в одиночку под ключ.",
+                exp_title: "Опыт",
+                exp0_role: "Основатель и соло-разработчик",
+                exp0_period: "2026 — н.в.",
+                exp0_b1: "Спроектировал и собрал Turborepo-монорепо (admin + tma) на Next.js 15 + Supabase + Firebase",
+                exp0_b2: "Сделал AI-редактор магазина на xAI Grok (tools API) — правит каталог из чата",
+                exp0_b3: "Программа лояльности (баллы + штамп-карты), бронирования, приём оплат Re:Kassa, webhook-флоу",
+                exp0_b4: "Свой дизайн-система: glass-поверхности, единый Button / Idealochka-модалка, белые pill-CTA",
+                exp1_role: "Project Manager и разработчик",
+                exp1_company: "Личные проекты",
                 exp1_period: "Янв 2026 — н.в.",
                 exp1_b1: "Спроектировал архитектуру AI-системы видеоаналитики",
-                exp1_b2: "Развернул двуязычный сайт с SEO и n8n-интеграцией",
-                exp1_b3: "Настроил Docker, Nginx, VPS-инфраструктуру",
-                exp1_b4: "Реализовал LLM-интеграции и автоматические пайплайны",
-                exp2_role: "Инженер-интегратор",
-                exp2_company: "Личная практика",
-                exp2_b1: "End-to-end AI-пайплайны в n8n",
-                exp2_b2: "Self-hosted инфраструктура",
+                exp1_b2: "Собрал двуязычный лендинг с SEO и n8n-пайплайном лидов",
+                exp1_b3: "Настроил Docker + Nginx + VPS-инфру с SSL",
                 exp3_role: "Инженер ГСМ",
-                exp3_company: "Аэропорт «ОРАЛ»",
+                exp3_company: "Международный аэропорт «Орал»",
                 exp3_period: "Сен 2022 — Мар 2026",
-                ai_title: "ИИ Интеграция и Автоматизация",
-                ai_headline: "Сквозные AI-пайплайны с n8n",
-                ai_desc: "Я проектирую и развертываю автономные рабочие процессы автоматизации ИИ (self-hosted), которые объединяют LLM, API и платформы обмена сообщениями в готовые к работе пайплайны. От сбора данных до генерации и публикации контента — полностью автоматизировано, работает 24/7 на моей собственной инфраструктуре.",
-                pipe_1: "Источники данных",
-                pipe_4: "Генерация контента",
-                cap1_title: "Оркестрация процессов",
-                cap1_desc: "Многошаговые рабочие процессы n8n с условной логикой, обработкой ошибок и триггерами по расписанию.",
-                cap2_title: "Интеграция LLM",
-                cap2_desc: "Claude API для переписывания контента, суммаризации и интеллектуальной обработки данных.",
-                cap3_title: "Self-Hosted Инфраструктура",
-                cap3_desc: "Docker + Nginx Proxy Manager + SSL. Полный контроль, никакой привязки к вендору.",
-                projects_title: "Популярные проекты",
-                p1_title: "AI SEEKERIS",
-                p1_desc: "B2B видеоаналитика · SaaS-продукт. Система детектирует события на видео и отправляет алерты в Telegram за секунды.",
-                p2_title: "AI Контент-агент",
-                p2_desc: "Автоматизация Telegram-канала. Парсинг источников → обработка LLM → публикация, работает 24/7.",
-                p3_title: "Clean Living",
-                p3_desc: "Мобильный трекер привычек. Приложение для формирования привычек с напоминаниями и визуальным прогрессом.",
-                val_title: "Почему я",
-                val1_title: "Полный цикл",
-                val1_desc: "Весь стек без передачи задач",
-                val2_title: "Автоматизация",
-                val2_desc: "Убираю рутину через AI",
-                val3_title: "Надёжная инфраструктура",
-                val3_desc: "Настраиваю окружение для автономной работы",
-                val4_title: "Скорость запуска",
-                val4_desc: "От идеи до деплоя в кратчайшие сроки",
-                skills_title: "Технологический стек",
-                skill_ai: "🤖 ИИ и Автоматизация",
-                skill_frontend: "🖥 Frontend",
-                skill_backend: "🗄 Backend и данные",
-                skill_infra: "🏗 Инфраструктура",
-                footer_text: "Создано darknesslake. Размещено на GitHub Pages."
+                stack_title: "Стек",
+                stack_frontend: "Frontend",
+                stack_backend: "Backend и данные",
+                stack_ai: "AI и автоматизация",
+                stack_infra: "Инфра и тулинг",
+                footer_text: "Сделано darknesslake. Хостится на GitHub Pages."
             }
         };
 
@@ -640,12 +522,12 @@
             });
             document.querySelectorAll('.btn-en').forEach(btn => btn.classList.toggle('active', lang === 'en'));
             document.querySelectorAll('.btn-ru').forEach(btn => btn.classList.toggle('active', lang === 'ru'));
+            document.documentElement.lang = lang;
         }
 
-        // Initialize with English
         setLang('en');
 
-        // Mobile Menu Logic
+        // Mobile menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -656,10 +538,14 @@
             const isHidden = mobileMenu.classList.contains('hidden');
             if (isHidden) {
                 mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
                 setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
             } else {
                 mobileMenu.classList.add('opacity-0');
-                setTimeout(() => mobileMenu.classList.add('hidden'), 200);
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 200);
             }
             menuIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
@@ -667,6 +553,17 @@
 
         mobileMenuBtn.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Fade-up observer
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.fade-up').forEach((el) => obs.observe(el));
     </script>
 </body>
 
