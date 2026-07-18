@@ -4,12 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denis (darknesslake) — Full-stack & AI developer</title>
-    <meta name="description" content="Denis — full-stack & AI developer from Kazakhstan. Open to full-time. Building Sirekees — no-code store builder for Telegram Mini App + web.">
+    <title>Denis (darknesslake) — Full-stack product developer</title>
+    <meta name="description" content="Denis is a full-stack product developer from Kazakhstan building Sirekees, Sirekees Invite, and other independent products from idea to production.">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://darknesslake.github.io/">
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darknesslake.github.io/">
+    <meta property="og:title" content="Denis (darknesslake) — Full-stack product developer">
+    <meta property="og:description" content="I build and launch products end-to-end. Founder of Sirekees and Sirekees Invite.">
+    <meta property="og:image" content="https://darknesslake.github.io/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Denis — full-stack product developer and founder of Sirekees">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Denis (darknesslake) — Full-stack product developer">
+    <meta name="twitter:description" content="I build and launch products end-to-end. Founder of Sirekees and Sirekees Invite.">
+    <meta name="twitter:image" content="https://darknesslake.github.io/og.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000;
@@ -19,11 +36,23 @@
         html { scroll-behavior: smooth; }
 
         .fade-up {
+            opacity: 1;
+            transform: none;
+        }
+        .js .fade-up {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
         }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .js .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        section[id] { scroll-margin-top: 5rem; }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
 
         .lang-btn {
             padding: 3px 9px;
@@ -50,35 +79,57 @@
         .glow-text {
             text-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .js .fade-up { opacity: 1; transform: none; transition: none; }
+            .animate-ping { animation: none !important; }
+        }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Denis Ponomarenko",
+            "alternateName": "darknesslake",
+            "url": "https://darknesslake.github.io/",
+            "jobTitle": "Full-stack product developer",
+            "sameAs": [
+                "https://github.com/darknesslake",
+                "https://www.linkedin.com/in/darknesslake/",
+                "https://t.me/darknesslake"
+            ],
+            "knowsAbout": ["Product development", "Next.js", "TypeScript", "Supabase", "React Native", "Telegram applications"]
+        }
+    </script>
 </head>
 
 <body class="antialiased selection:bg-white selection:text-black flex flex-col min-h-screen overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-black/75 border-b border-white/5">
+    <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-black/75 border-b border-white/5" aria-label="Primary navigation">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="font-semibold text-base tracking-tight text-white hover:opacity-90 transition relative z-50">darknesslake</a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-white transition" data-i18n="nav_about">About</a>
                 <a href="#projects" class="hover:text-white transition" data-i18n="nav_projects">Projects</a>
+                <a href="#about" class="hover:text-white transition" data-i18n="nav_about">About</a>
                 <a href="#experience" class="hover:text-white transition" data-i18n="nav_experience">Experience</a>
                 <a href="#stack" class="hover:text-white transition" data-i18n="nav_stack">Stack</a>
                 <div class="flex gap-1 ml-2 border-l border-white/10 pl-4">
-                    <button class="lang-btn btn-en active" onclick="setLang('en')">EN</button>
-                    <button class="lang-btn btn-ru" onclick="setLang('ru')">RU</button>
+                    <button type="button" class="lang-btn btn-en active" onclick="setLang('en')" lang="en" aria-label="Switch to English" aria-pressed="true">EN</button>
+                    <button type="button" class="lang-btn btn-ru" onclick="setLang('ru')" lang="ru" aria-label="Переключить на русский" aria-pressed="false">RU</button>
                 </div>
             </div>
 
             <!-- Mobile -->
             <div class="flex md:hidden items-center gap-3 relative z-50">
                 <div class="flex gap-1">
-                    <button class="lang-btn btn-en active" onclick="setLang('en')">EN</button>
-                    <button class="lang-btn btn-ru" onclick="setLang('ru')">RU</button>
+                    <button type="button" class="lang-btn btn-en active" onclick="setLang('en')" lang="en" aria-label="Switch to English" aria-pressed="true">EN</button>
+                    <button type="button" class="lang-btn btn-ru" onclick="setLang('ru')" lang="ru" aria-label="Переключить на русский" aria-pressed="false">RU</button>
                 </div>
-                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none" aria-label="Menu">
+                <button type="button" id="mobile-menu-btn" class="text-slate-300 hover:text-white" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">
                     <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -87,9 +138,9 @@
                     </svg>
                 </button>
 
-                <div id="mobile-menu" class="absolute top-12 right-0 w-56 rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl shadow-2xl hidden flex-col py-2 z-50 opacity-0 transition-opacity duration-200">
-                    <a href="#about" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_about">About</a>
+                <div id="mobile-menu" class="absolute top-12 right-0 w-56 rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl shadow-2xl hidden flex-col py-2 z-50 opacity-0 transition-opacity duration-200" aria-hidden="true">
                     <a href="#projects" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_projects">Projects</a>
+                    <a href="#about" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_about">About</a>
                     <a href="#experience" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_experience">Experience</a>
                     <a href="#stack" class="mobile-link px-5 py-3 text-slate-300 hover:text-white text-sm font-medium" data-i18n="nav_stack">Stack</a>
                 </div>
@@ -107,7 +158,7 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
                         </span>
-                        <span data-i18n="hero_status">Open to full-time</span>
+                        <span data-i18n="hero_status">Building Sirekees · Open to remote work</span>
                     </span>
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-300 text-xs font-medium">
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -117,82 +168,63 @@
                         <span data-i18n="hero_location">Kazakhstan · GMT+5</span>
                     </span>
                 </div>
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight glow-text leading-[1.05]" data-i18n="hero_h1">Building products end-to-end.</h1>
-                <h2 class="text-xl md:text-2xl font-medium mb-8 text-slate-400 tracking-tight leading-snug" data-i18n="hero_role">
-                    Hi, I'm Denis (<span class="text-slate-300">@darknesslake</span>) — full-stack & AI developer, solo founder of Sirekees.
-                </h2>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight glow-text leading-[1.05]" data-i18n="hero_h1">I build and launch my own products.</h1>
+                <p class="text-xl md:text-2xl font-medium mb-8 text-slate-400 tracking-tight leading-snug" data-i18n="hero_role">
+                    Hi, I'm Denis (<span class="text-slate-300">@darknesslake</span>) — a full-stack product developer and founder of Sirekees.
+                </p>
                 <p class="text-base md:text-lg text-slate-400 mb-10 leading-relaxed max-w-2xl" data-i18n="hero_desc">
-                    I ship products end-to-end — Next.js apps, Telegram Mini Apps, AI agents, self-hosted infra. Solo founder. Currently building Sirekees — a no-code store builder for local small business.
+                    I take products from idea to production: product decisions, interface, backend, integrations, deployment, and day-to-day operation. Currently building Sirekees and Sirekees Invite.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="https://github.com/darknesslake" target="_blank"
+                    <a href="https://sirekees.com/" target="_blank" rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-white text-slate-900 text-sm font-semibold hover:opacity-90 active:scale-[.985] transition-all duration-200">
+                        <span data-i18n="btn_sirekees">View Sirekees</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="https://github.com/darknesslake" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                         </svg>
                         <span data-i18n="btn_github">GitHub</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/darknesslake/" target="_blank"
+                    <a href="https://t.me/darknesslake" target="_blank" rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        <span data-i18n="btn_linkedin">LinkedIn</span>
-                    </a>
-                    <a href="https://t.me/darknesslake" target="_blank"
-                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.117.095.152.227.166.331.011.082.022.264.013.414z" />
                         </svg>
                         <span data-i18n="btn_contact">Telegram</span>
-                    </a>
-                    <a href="mailto:vabcax@gmail.com"
-                        class="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-slate-200 text-sm font-medium hover:bg-white/[0.07] hover:text-white active:scale-[.985] transition-all duration-200">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <span data-i18n="btn_email">Email</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- About -->
-        <section id="about" class="max-w-5xl mx-auto px-6 py-12">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
-                <span class="w-8 h-px bg-white/20"></span>
-                <span data-i18n="about_title">About</span>
-            </h3>
-            <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 md:p-8">
-                <p class="text-slate-300 leading-relaxed" data-i18n="about_text">
-                    I cover the full product cycle solo: design, code, deploy, run in production. Came to development from operating critical infrastructure at an airport — that's where the habit of writing code that doesn't fall over comes from. Now building Sirekees and other AI-driven products for small business.
-                </p>
-            </div>
-        </section>
-
         <!-- Projects -->
         <section id="projects" class="max-w-5xl mx-auto px-6 py-12">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
                 <span class="w-8 h-px bg-white/20"></span>
                 <span data-i18n="projects_title">Featured projects</span>
-            </h3>
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Sirekees -->
                 <article class="fade-up rounded-2xl border border-white/15 bg-white/[0.05] backdrop-blur-xl p-6 hover:border-white/25 hover:bg-white/[0.07] transition-all duration-300 flex flex-col md:col-span-2">
-                    <div class="flex justify-between items-start mb-5 gap-3">
+                    <div class="flex flex-wrap justify-between items-start mb-5 gap-4">
                         <div class="flex items-center gap-2 flex-wrap">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-200 text-[11px] font-medium" data-i18n="p0_tag_active">Active · Solo founder</span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-200 text-[11px] font-medium" data-i18n="p0_tag_active">Active · Main product</span>
                             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium">
                                 <span class="relative flex h-1.5 w-1.5">
                                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-60"></span>
                                     <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
                                 </span>
-                                <span data-i18n="p0_tag_main">Main project</span>
+                                <span data-i18n="p0_tag_main">In development</span>
                             </span>
                         </div>
+                        <a href="https://sirekees.com/" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex min-h-10 items-center rounded-full border border-white/10 px-4 text-xs font-medium text-slate-200 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white" data-i18n="link_live">Live site ↗</a>
                     </div>
-                    <h4 class="text-2xl font-semibold text-white mb-3 tracking-tight">Sirekees</h4>
+                    <h3 class="text-2xl font-semibold text-white mb-3 tracking-tight">Sirekees</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-3xl" data-i18n="p0_desc">
-                        No-code store builder for local small business. Two apps in a Turborepo monorepo: <span class="text-slate-200">admin</span> (owner panel) and <span class="text-slate-200">tma</span> (storefront renderer by bot_id — same engine renders the Telegram Mini App and the public web catalog at <code class="text-[12px] text-slate-300">/store/[bot_id]</code>). AI store editor, loyalty program (points + stamp cards), payments via Re:Kassa, AI consultant that answers customers.
+                        A storefront and booking platform for local businesses. Owners publish one page for products, services, orders, or appointments and share a single link. I built the product end-to-end: owner dashboard, public storefronts, Telegram experience, payments, loyalty, analytics, and AI-assisted setup.
                     </p>
                     <div class="flex flex-wrap gap-1.5 mt-auto">
                         <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Next.js 15</span>
@@ -207,123 +239,89 @@
                     </div>
                 </article>
 
-                <!-- Personal projects -->
+                <!-- Sirekees Invite -->
                 <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p1_tag">B2B · SaaS</span>
-                        <a href="https://aiseekeris.space/" target="_blank" class="text-slate-400 hover:text-white transition" aria-label="Open project">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
+                    <div class="flex flex-wrap justify-between items-start mb-4 gap-3">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p1_tag">Live beta · Solo-built</span>
+                        <a href="https://invite.sirekees.com/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-10 items-center rounded-full border border-white/10 px-3 text-xs font-medium text-slate-300 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white" data-i18n="link_live">Live site ↗</a>
                     </div>
-                    <h4 class="text-xl font-semibold text-white mb-2 group-hover:text-white transition" data-i18n="p1_title">Personal projects</h4>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white transition" data-i18n="p1_title">Sirekees Invite</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow" data-i18n="p1_desc">
-                        B2B video analytics. Detects events on video streams and pushes alerts to Telegram in seconds. Designed the system architecture and shipped the bilingual marketing site.
+                        A mobile-first invitation builder with curated templates, multilingual content, one shareable link, guest replies, private guest lists, reminders, and exports.
                     </p>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Python</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">OpenCV</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">YOLO</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">PostgreSQL</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Docker</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Telegram Bot API</span>
-                    </div>
-                </article>
-
-                <!-- AI Content Agent -->
-                <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p2_tag">Self-hosted · 24/7</span>
-                        <a href="https://github.com/darknesslake" target="_blank" class="text-slate-400 hover:text-white transition" aria-label="GitHub">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <h4 class="text-xl font-semibold text-white mb-2" data-i18n="p2_title">AI Content Agent</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow" data-i18n="p2_desc">
-                        Telegram channel automation. n8n pipeline: source parsing → Claude rewrite → scheduled publish. Self-hosted on a VPS, runs 24/7 without manual touch.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">n8n</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Claude API</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Python</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Docker</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Telegram Bot API</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Next.js 16</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">TypeScript</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Supabase</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">next-intl</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Vitest</span>
                     </div>
                 </article>
 
                 <!-- Clean Living -->
-                <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col md:col-span-2">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p3_tag">Mobile · React Native</span>
-                        <a href="https://github.com/darknesslake/cleanliving-app" target="_blank" class="text-slate-400 hover:text-white transition" aria-label="GitHub">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
+                <article class="fade-up group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-300 flex flex-col">
+                    <div class="flex flex-wrap justify-between items-start mb-4 gap-3">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.05] text-slate-300 text-[11px] font-medium" data-i18n="p3_tag">Mobile prototype</span>
+                        <a href="https://github.com/darknesslake/cleanliving-app" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-10 items-center rounded-full border border-white/10 px-3 text-xs font-medium text-slate-300 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white" data-i18n="link_code">View code ↗</a>
                     </div>
-                    <h4 class="text-xl font-semibold text-white mb-2" data-i18n="p3_title">Clean Living</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow max-w-3xl" data-i18n="p3_desc">
-                        Mobile habit tracker. React Native + Expo, Firebase backend, Claude API for AI suggestions. Designed and shipped solo end-to-end.
+                    <h3 class="text-xl font-semibold text-white mb-2" data-i18n="p3_title">Clean Living</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-grow" data-i18n="p3_desc">
+                        A React Native prototype for habits and training: routines, streaks, statistics, profiles, themes, and cloud sync with Firebase.
                     </p>
                     <div class="flex flex-wrap gap-1.5">
                         <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">React Native</span>
                         <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">TypeScript</span>
                         <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Expo</span>
                         <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Firebase</span>
-                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Claude API</span>
+                        <span class="px-2.5 py-1 text-[11px] font-medium border border-white/10 bg-white/[0.04] text-slate-300 rounded-full">Firestore</span>
                     </div>
                 </article>
             </div>
         </section>
 
+        <!-- About -->
+        <section id="about" class="max-w-5xl mx-auto px-6 py-12">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+                <span class="w-8 h-px bg-white/20"></span>
+                <span data-i18n="about_title">About</span>
+            </h2>
+            <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 md:p-8">
+                <p class="text-slate-300 leading-relaxed" data-i18n="about_text">
+                    Before software, I spent 3.5 years in aviation fuel operations, where one missed detail could delay a flight. That trained me to think in systems, processes, and edge cases — the same discipline I bring to every product I design, build, and run.
+                </p>
+            </div>
+        </section>
+
         <!-- Experience -->
         <section id="experience" class="max-w-5xl mx-auto px-6 py-12">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
                 <span class="w-8 h-px bg-white/20"></span>
                 <span data-i18n="exp_title">Experience</span>
-            </h3>
+            </h2>
             <div class="space-y-3">
                 <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/15 transition-colors">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                         <div>
-                            <h4 class="text-base font-semibold text-white" data-i18n="exp0_role">Founder & Solo developer</h4>
+                            <h3 class="text-base font-semibold text-white" data-i18n="exp0_role">Founder & Full-stack developer</h3>
                             <p class="text-slate-400 text-sm">Sirekees</p>
                         </div>
-                        <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp0_period">2026 — Present</span>
+                        <span class="text-slate-400 text-sm whitespace-nowrap" data-i18n="exp0_period">2026 — Present</span>
                     </div>
                     <ul class="space-y-1.5 text-slate-400 text-sm">
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b1">Designed and shipped a Turborepo monorepo (admin + tma) on Next.js 15 + Supabase + Firebase</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b2">Built an AI store editor on xAI Grok (tools API) that edits the catalog from chat</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b3">Loyalty program (points + stamp cards), bookings, Re:Kassa payments, webhook flow</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b4">Own design system: glass surfaces, unified Button / Idealochka modal, white pill CTAs</span></li>
-                    </ul>
-                </div>
-
-                <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/15 transition-colors">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                        <div>
-                            <h4 class="text-base font-semibold text-white" data-i18n="exp1_role">Project Manager & Developer</h4>
-                            <p class="text-slate-400 text-sm" data-i18n="exp1_company">Personal projects</p>
-                        </div>
-                        <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp1_period">Jan 2026 — Present</span>
-                    </div>
-                    <ul class="space-y-1.5 text-slate-400 text-sm">
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp1_b1">Designed the AI video analytics system architecture</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp1_b2">Shipped a bilingual marketing site with SEO and n8n lead pipeline</span></li>
-                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp1_b3">Set up Docker + Nginx + VPS infra with SSL</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b1">Built and launched Sirekees, a live SaaS product for local businesses</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b2">Delivered web and Telegram journeys for orders, bookings, payments, loyalty, reviews, and notifications</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b3">Added AI-assisted page setup, catalog editing, customer support, and business analytics</span></li>
+                        <li class="flex items-start gap-2"><span class="w-1 h-1 rounded-full bg-white/30 mt-2 shrink-0"></span><span data-i18n="exp0_b4">Launched Sirekees Invite, a multilingual invitation and RSVP product</span></li>
                     </ul>
                 </div>
 
                 <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 hover:border-white/15 transition-colors">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                         <div>
-                            <h4 class="text-base font-semibold text-white" data-i18n="exp3_role">Fuel Supply Engineer</h4>
+                            <h3 class="text-base font-semibold text-white" data-i18n="exp3_role">Fuel Supply Engineer</h3>
                             <p class="text-slate-400 text-sm" data-i18n="exp3_company">Oral International Airport</p>
                         </div>
-                        <span class="text-slate-500 text-sm whitespace-nowrap" data-i18n="exp3_period">Sep 2022 — Mar 2026</span>
+                        <span class="text-slate-400 text-sm whitespace-nowrap" data-i18n="exp3_period">Sep 2022 — Mar 2026</span>
                     </div>
                 </div>
             </div>
@@ -331,53 +329,53 @@
 
         <!-- Stack -->
         <section id="stack" class="max-w-5xl mx-auto px-6 py-12">
-            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-up">
                 <span class="w-8 h-px bg-white/20"></span>
                 <span data-i18n="stack_title">Stack</span>
-            </h3>
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                 <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
-                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_frontend">Frontend</h4>
+                    <h3 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_frontend">Frontend</h3>
                     <ul class="space-y-2 text-slate-400 text-sm">
-                        <li>Next.js 15 (App Router)</li>
+                        <li>Next.js 15 / 16</li>
                         <li>React 19, TypeScript</li>
                         <li>Tailwind CSS 4</li>
                         <li>React Native, Expo</li>
-                        <li>@twa-dev/sdk</li>
+                        <li>Responsive product UI</li>
                     </ul>
                 </div>
 
                 <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
-                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_backend">Backend & Data</h4>
+                    <h3 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_backend">Backend & Data</h3>
                     <ul class="space-y-2 text-slate-400 text-sm">
                         <li>Supabase (Postgres, RLS)</li>
                         <li>Firebase (Auth, Admin SDK)</li>
                         <li>Server Actions, Route Handlers</li>
-                        <li>Telegram Bot API, webhooks</li>
-                        <li>Re:Kassa payment integration</li>
+                        <li>Zod, React Hook Form</li>
+                        <li>Storage, auth, analytics</li>
                     </ul>
                 </div>
 
                 <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
-                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_ai">AI & Automation</h4>
+                    <h3 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_ai">Products & Integrations</h3>
                     <ul class="space-y-2 text-slate-400 text-sm">
-                        <li>xAI Grok (tools API)</li>
-                        <li>Claude API</li>
-                        <li>n8n (self-hosted workflows)</li>
-                        <li>OpenCV, YOLO</li>
-                        <li>Prompt engineering</li>
+                        <li>Telegram Mini Apps, Bot API</li>
+                        <li>Payments, webhooks</li>
+                        <li>xAI Grok, tool calling</li>
+                        <li>n8n integrations</li>
+                        <li>next-intl, multilingual UX</li>
                     </ul>
                 </div>
 
                 <div class="fade-up rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
-                    <h4 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_infra">Infra & Tooling</h4>
+                    <h3 class="text-white font-semibold mb-4 text-sm" data-i18n="stack_infra">Delivery & Quality</h3>
                     <ul class="space-y-2 text-slate-400 text-sm">
                         <li>Turborepo, npm workspaces</li>
-                        <li>Docker, Docker Compose</li>
-                        <li>Nginx Proxy Manager, SSL</li>
-                        <li>Ubuntu VPS, SSH, rsync</li>
-                        <li>Git, GitHub Actions</li>
+                        <li>Vercel, GitHub Actions</li>
+                        <li>Docker, Nginx, VPS</li>
+                        <li>Vitest, Playwright</li>
+                        <li>Git, production support</li>
                     </ul>
                 </div>
             </div>
@@ -387,18 +385,18 @@
     <!-- Footer -->
     <footer class="border-t border-white/5 bg-black mt-auto py-8">
         <div class="max-w-5xl mx-auto px-6 flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-4">
-            <p class="text-slate-500 text-sm text-center md:text-left" data-i18n="footer_text">
+            <p class="text-slate-400 text-sm text-center md:text-left" data-i18n="footer_text">
                 Built by darknesslake. Hosted on GitHub Pages.
             </p>
             <div class="flex flex-wrap justify-center items-center gap-4">
-                <a href="https://www.linkedin.com/in/darknesslake/" target="_blank"
+                <a href="https://www.linkedin.com/in/darknesslake/" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition text-sm">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     LinkedIn
                 </a>
                 <a href="mailto:vabcax@gmail.com"
                     class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition text-sm">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     vabcax@gmail.com
                 </a>
             </div>
@@ -408,162 +406,217 @@
     <script>
         const translations = {
             en: {
+                meta_title: "Denis (darknesslake) — Full-stack product developer",
+                meta_description: "Full-stack developer and founder building Sirekees and Sirekees Invite — from idea and product decisions to production.",
+                menu_open: "Open menu",
+                menu_close: "Close menu",
                 nav_about: "About",
-                nav_projects: "Projects",
+                nav_projects: "Products",
                 nav_experience: "Experience",
                 nav_stack: "Stack",
-                hero_status: "Open to full-time",
+                hero_status: "Building Sirekees · Open to remote work",
                 hero_location: "Kazakhstan · GMT+5",
-                hero_h1: "Building products end-to-end.",
-                hero_role: "Hi, I'm Denis (<span class='text-slate-300'>@darknesslake</span>) — full-stack & AI developer, solo founder of Sirekees.",
-                hero_desc: "I ship products end-to-end — Next.js apps, Telegram Mini Apps, AI agents, self-hosted infra. Solo founder. Currently building Sirekees — a no-code store builder for local small business.",
+                hero_h1: "I build and launch my own products.",
+                hero_role: "Hi, I'm Denis (<span class='text-slate-300'>@darknesslake</span>) — a full-stack product developer and founder of Sirekees.",
+                hero_desc: "I take products from idea to production: product decisions, interface, backend, integrations, deployment, and day-to-day operation. Currently building Sirekees and Sirekees Invite.",
+                btn_sirekees: "View Sirekees",
                 btn_github: "GitHub",
-                btn_linkedin: "LinkedIn",
                 btn_contact: "Telegram",
-                btn_email: "Email",
+                link_live: "Live site ↗",
+                link_code: "View code ↗",
                 about_title: "About",
-                about_text: "I cover the full product cycle solo: design, code, deploy, run in production. Came to development from operating critical infrastructure at an airport — that's where the habit of writing code that doesn't fall over comes from. Now building Sirekees and other AI-driven products for small business.",
-                projects_title: "Featured projects",
-                p0_tag_active: "Active · Solo founder",
-                p0_tag_main: "Main project",
-                p0_desc: "No-code store builder for local small business. Two apps in a Turborepo monorepo: <span class='text-slate-200'>admin</span> (owner panel) and <span class='text-slate-200'>tma</span> (storefront renderer by bot_id — same engine renders the Telegram Mini App and the public web catalog at <code class='text-[12px] text-slate-300'>/store/[bot_id]</code>). AI store editor, loyalty program (points + stamp cards), payments via Re:Kassa, AI consultant that answers customers.",
-                p1_tag: "B2B · SaaS",
-                p1_title: "Personal projects",
-                p1_desc: "B2B video analytics. Detects events on video streams and pushes alerts to Telegram in seconds. Designed the system architecture and shipped the bilingual marketing site.",
-                p2_tag: "Self-hosted · 24/7",
-                p2_title: "AI Content Agent",
-                p2_desc: "Telegram channel automation. n8n pipeline: source parsing → Claude rewrite → scheduled publish. Self-hosted on a VPS, runs 24/7 without manual touch.",
-                p3_tag: "Mobile · React Native",
+                about_text: "Before software, I spent 3.5 years in aviation fuel operations, where one missed detail could delay a flight. That trained me to think in systems, processes, and edge cases — the same discipline I bring to every product I design, build, and run.",
+                projects_title: "Products",
+                p0_tag_active: "Active · Main product",
+                p0_tag_main: "In development",
+                p0_desc: "A storefront and booking platform for local businesses. Owners publish one page for products, services, orders, or appointments and share a single link. I built the product end-to-end: owner dashboard, public storefronts, Telegram experience, payments, loyalty, analytics, and AI-assisted setup.",
+                p1_tag: "Live beta · Solo-built",
+                p1_title: "Sirekees Invite",
+                p1_desc: "A mobile-first invitation builder with curated templates, multilingual content, one shareable link, guest replies, private guest lists, reminders, and exports.",
+                p3_tag: "Mobile prototype",
                 p3_title: "Clean Living",
-                p3_desc: "Mobile habit tracker. React Native + Expo, Firebase backend, Claude API for AI suggestions. Designed and shipped solo end-to-end.",
+                p3_desc: "A React Native prototype for habits and training: routines, streaks, statistics, profiles, themes, and cloud sync with Firebase.",
                 exp_title: "Experience",
-                exp0_role: "Founder & Solo developer",
+                exp0_role: "Founder & Full-stack developer",
                 exp0_period: "2026 — Present",
-                exp0_b1: "Designed and shipped a Turborepo monorepo (admin + tma) on Next.js 15 + Supabase + Firebase",
-                exp0_b2: "Built an AI store editor on xAI Grok (tools API) that edits the catalog from chat",
-                exp0_b3: "Loyalty program (points + stamp cards), bookings, Re:Kassa payments, webhook flow",
-                exp0_b4: "Own design system: glass surfaces, unified Button / Idealochka modal, white pill CTAs",
-                exp1_role: "Project Manager & Developer",
-                exp1_company: "Personal projects",
-                exp1_period: "Jan 2026 — Present",
-                exp1_b1: "Designed the AI video analytics system architecture",
-                exp1_b2: "Shipped a bilingual marketing site with SEO and n8n lead pipeline",
-                exp1_b3: "Set up Docker + Nginx + VPS infra with SSL",
+                exp0_b1: "Built and launched Sirekees, a live SaaS product for local businesses",
+                exp0_b2: "Delivered web and Telegram journeys for orders, bookings, payments, loyalty, reviews, and notifications",
+                exp0_b3: "Added AI-assisted page setup, catalog editing, customer support, and business analytics",
+                exp0_b4: "Launched Sirekees Invite, a multilingual invitation and RSVP product",
                 exp3_role: "Fuel Supply Engineer",
                 exp3_company: "Oral International Airport",
                 exp3_period: "Sep 2022 — Mar 2026",
                 stack_title: "Stack",
                 stack_frontend: "Frontend",
                 stack_backend: "Backend & Data",
-                stack_ai: "AI & Automation",
-                stack_infra: "Infra & Tooling",
+                stack_ai: "Products & Integrations",
+                stack_infra: "Delivery & Quality",
                 footer_text: "Built by darknesslake. Hosted on GitHub Pages."
             },
             ru: {
+                meta_title: "Денис (darknesslake) — full-stack-разработчик продуктов",
+                meta_description: "Full-stack-разработчик и основатель Sirekees. Создаю Sirekees и Sirekees Invite от идеи до запуска.",
+                menu_open: "Открыть меню",
+                menu_close: "Закрыть меню",
                 nav_about: "Обо мне",
-                nav_projects: "Проекты",
+                nav_projects: "Продукты",
                 nav_experience: "Опыт",
                 nav_stack: "Стек",
-                hero_status: "Открыт к full-time",
+                hero_status: "Развиваю Sirekees · Открыт к удалённой работе",
                 hero_location: "Казахстан · GMT+5",
-                hero_h1: "Делаю продукты под ключ.",
-                hero_role: "Привет, я Денис (<span class='text-slate-300'>@darknesslake</span>) — full-stack и AI разработчик, соло-фаундер Sirekees.",
-                hero_desc: "Делаю продукты под ключ — Next.js приложения, Telegram Mini Apps, AI-агенты, self-hosted инфра. Соло-фаундер. Сейчас строю Sirekees — no-code конструктор магазинов для малого бизнеса.",
+                hero_h1: "Создаю и запускаю свои продукты.",
+                hero_role: "Привет, я Денис (<span class='text-slate-300'>@darknesslake</span>) — full-stack-разработчик и основатель Sirekees.",
+                hero_desc: "Веду продукт от идеи до запуска: продумываю сценарии, делаю интерфейс и серверную часть, подключаю сервисы и поддерживаю всё в работе. Сейчас развиваю Sirekees и Sirekees Invite.",
+                btn_sirekees: "Открыть Sirekees",
                 btn_github: "GitHub",
-                btn_linkedin: "LinkedIn",
                 btn_contact: "Telegram",
-                btn_email: "Email",
+                link_live: "Открыть сайт ↗",
+                link_code: "Посмотреть код ↗",
                 about_title: "Обо мне",
-                about_text: "Закрываю весь цикл продукта в одиночку: дизайн, код, деплой, эксплуатация в проде. В разработку пришёл из управления критической инфраструктурой в аэропорту — оттуда привычка писать код, который не падает. Сейчас строю Sirekees и другие AI-продукты для малого бизнеса.",
-                projects_title: "Проекты",
-                p0_tag_active: "Активный · соло",
-                p0_tag_main: "Основной проект",
-                p0_desc: "No-code конструктор онлайн-магазинов для малого бизнеса. Два приложения в Turborepo-монорепо: <span class='text-slate-200'>admin</span> (панель владельца) и <span class='text-slate-200'>tma</span> (движок витрины по bot_id — один и тот же рендерит Telegram Mini App и публичный веб-каталог по <code class='text-[12px] text-slate-300'>/store/[bot_id]</code>). AI-редактор магазина, программа лояльности (баллы + штамп-карты), приём платежей через Re:Kassa, AI-консультант для покупателей.",
-                p1_tag: "B2B · SaaS",
-                p1_title: "Личные проекты",
-                p1_desc: "B2B видеоаналитика. Детектирует события на видеопотоках и шлёт алерты в Telegram за секунды. Спроектировал архитектуру и собрал двуязычный лендинг.",
-                p2_tag: "Self-hosted · 24/7",
-                p2_title: "AI Content Agent",
-                p2_desc: "Автоматизация Telegram-канала. n8n-пайплайн: парсинг источников → переписывание через Claude → отложенная публикация. Self-hosted на VPS, работает 24/7 без касания.",
-                p3_tag: "Mobile · React Native",
+                about_text: "До разработки я 3,5 года работал в обеспечении полётов авиационным топливом, где одна ошибка могла задержать рейс. Там я привык мыслить системно, выстраивать процессы и заранее учитывать нештатные ситуации. Этот подход я перенёс в разработку продуктов.",
+                projects_title: "Продукты",
+                p0_tag_active: "Развиваю · Основной продукт",
+                p0_tag_main: "В работе",
+                p0_desc: "Платформа для малого бизнеса: владелец публикует страницу с товарами, услугами, заказами или записью и делится одной ссылкой. Я сделал весь продукт: кабинет, публичные страницы, магазин в Telegram, оплату, лояльность, аналитику и AI-мастер первого запуска.",
+                p1_tag: "Бета · Сделано самостоятельно",
+                p1_title: "Sirekees Invite",
+                p1_desc: "Конструктор онлайн-приглашений: шаблоны, несколько языков, одна ссылка для гостей, ответы, список гостей, напоминания и выгрузка.",
+                p3_tag: "Мобильный прототип",
                 p3_title: "Clean Living",
-                p3_desc: "Мобильный трекер привычек. React Native + Expo, Firebase, Claude API для AI-подсказок. Сделал в одиночку под ключ.",
+                p3_desc: "Мобильный прототип для привычек и тренировок: программы, серии выполнений, статистика, профиль, темы и синхронизация через Firebase.",
                 exp_title: "Опыт",
-                exp0_role: "Основатель и соло-разработчик",
+                exp0_role: "Основатель и full-stack-разработчик",
                 exp0_period: "2026 — н.в.",
-                exp0_b1: "Спроектировал и собрал Turborepo-монорепо (admin + tma) на Next.js 15 + Supabase + Firebase",
-                exp0_b2: "Сделал AI-редактор магазина на xAI Grok (tools API) — правит каталог из чата",
-                exp0_b3: "Программа лояльности (баллы + штамп-карты), бронирования, приём оплат Re:Kassa, webhook-флоу",
-                exp0_b4: "Свой дизайн-система: glass-поверхности, единый Button / Idealochka-модалка, белые pill-CTA",
-                exp1_role: "Project Manager и разработчик",
-                exp1_company: "Личные проекты",
-                exp1_period: "Янв 2026 — н.в.",
-                exp1_b1: "Спроектировал архитектуру AI-системы видеоаналитики",
-                exp1_b2: "Собрал двуязычный лендинг с SEO и n8n-пайплайном лидов",
-                exp1_b3: "Настроил Docker + Nginx + VPS-инфру с SSL",
+                exp0_b1: "Создал и запустил Sirekees для локального малого бизнеса",
+                exp0_b2: "Собрал путь клиента в браузере и Telegram: заказы, запись, оплата, лояльность, отзывы и уведомления",
+                exp0_b3: "Добавил AI для создания страницы, редактирования каталога, ответов покупателям и аналитики",
+                exp0_b4: "Запустил Sirekees Invite — сервис приглашений и ответов гостей на трёх языках",
                 exp3_role: "Инженер ГСМ",
                 exp3_company: "Международный аэропорт «Орал»",
                 exp3_period: "Сен 2022 — Мар 2026",
                 stack_title: "Стек",
-                stack_frontend: "Frontend",
-                stack_backend: "Backend и данные",
-                stack_ai: "AI и автоматизация",
-                stack_infra: "Инфра и тулинг",
-                footer_text: "Сделано darknesslake. Хостится на GitHub Pages."
+                stack_frontend: "Интерфейсы",
+                stack_backend: "Сервер и данные",
+                stack_ai: "Продукты и интеграции",
+                stack_infra: "Запуск и качество",
+                footer_text: "Сделано darknesslake. Опубликовано на GitHub Pages."
             }
         };
 
-        function setLang(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-            document.querySelectorAll('.btn-en').forEach(btn => btn.classList.toggle('active', lang === 'en'));
-            document.querySelectorAll('.btn-ru').forEach(btn => btn.classList.toggle('active', lang === 'ru'));
-            document.documentElement.lang = lang;
-        }
-
-        setLang('en');
-
-        // Mobile menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
         const mobileLinks = document.querySelectorAll('.mobile-link');
+        let currentLang = 'en';
+        let menuCloseTimer;
 
-        function toggleMenu() {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
-                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
-            } else {
-                mobileMenu.classList.add('opacity-0');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                }, 200);
-            }
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        }
+        function setLang(lang, persist = true) {
+            const selectedLang = translations[lang] ? lang : 'en';
+            const copy = translations[selectedLang];
+            currentLang = selectedLang;
 
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-
-        // Fade-up observer
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach((e) => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    obs.unobserve(e.target);
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (copy[key]) {
+                    el.innerHTML = copy[key];
                 }
             });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.fade-up').forEach((el) => obs.observe(el));
+
+            document.querySelectorAll('.btn-en').forEach(btn => {
+                btn.classList.toggle('active', selectedLang === 'en');
+                btn.setAttribute('aria-pressed', String(selectedLang === 'en'));
+            });
+            document.querySelectorAll('.btn-ru').forEach(btn => {
+                btn.classList.toggle('active', selectedLang === 'ru');
+                btn.setAttribute('aria-pressed', String(selectedLang === 'ru'));
+            });
+
+            document.documentElement.lang = selectedLang;
+            document.title = copy.meta_title;
+            document.querySelector('meta[name="description"]').setAttribute('content', copy.meta_description);
+            document.querySelector('meta[property="og:title"]').setAttribute('content', copy.meta_title);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', copy.meta_description);
+            document.querySelector('meta[name="twitter:title"]').setAttribute('content', copy.meta_title);
+            document.querySelector('meta[name="twitter:description"]').setAttribute('content', copy.meta_description);
+
+            if (persist) {
+                try {
+                    localStorage.setItem('portfolio-language', selectedLang);
+                } catch (_) {}
+            }
+
+            const isMenuOpen = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-label', isMenuOpen ? copy.menu_close : copy.menu_open);
+        }
+
+        function setMenuOpen(isOpen) {
+            clearTimeout(menuCloseTimer);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? translations[currentLang].menu_close : translations[currentLang].menu_open);
+            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+            menuIcon.classList.toggle('hidden', isOpen);
+            closeIcon.classList.toggle('hidden', !isOpen);
+
+            if (isOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                requestAnimationFrame(() => mobileMenu.classList.remove('opacity-0'));
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                menuCloseTimer = setTimeout(() => {
+                    if (mobileMenuBtn.getAttribute('aria-expanded') === 'false') {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    }
+                }, 200);
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+            setMenuOpen(mobileMenuBtn.getAttribute('aria-expanded') !== 'true');
+        });
+        mobileLinks.forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && mobileMenuBtn.getAttribute('aria-expanded') === 'true') {
+                setMenuOpen(false);
+                mobileMenuBtn.focus();
+            }
+        });
+        document.addEventListener('click', event => {
+            if (mobileMenuBtn.getAttribute('aria-expanded') === 'true' && !mobileMenuBtn.parentElement.contains(event.target)) {
+                setMenuOpen(false);
+            }
+        });
+
+        let initialLang = 'en';
+        try {
+            const savedLang = localStorage.getItem('portfolio-language');
+            if (savedLang === 'en' || savedLang === 'ru') {
+                initialLang = savedLang;
+            } else if (/^(ru|kk)/i.test(navigator.language)) {
+                initialLang = 'ru';
+            }
+        } catch (_) {
+            if (/^(ru|kk)/i.test(navigator.language)) initialLang = 'ru';
+        }
+        setLang(initialLang, false);
+
+        // Fade-up observer
+        const fadeElements = document.querySelectorAll('.fade-up');
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeElements.forEach((element) => obs.observe(element));
+        } else {
+            fadeElements.forEach((element) => element.classList.add('visible'));
+        }
     </script>
 </body>
 
